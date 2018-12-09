@@ -1,0 +1,154 @@
+body {
+  font-family: Calibri, Candara, Segoe, Segoe UI, Arial, sans-serif;
+  text-align: justify;
+}
+table {
+  page-break-inside: auto;
+}
+tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+thead {
+  display: table-header-group;
+}
+tfoot {
+  display: table-footer-group;
+}
+.output-one {
+    grid-area: biodata-1;
+}
+
+.output-two {
+    grid-area: biodata-2;
+    margin-left: 30px;
+}
+
+.output-three {
+    grid-area: biodata-3;
+}
+
+.output-four {
+    margin-left: 20px;
+    grid-area: biodata-4;
+}
+
+.output-five {
+    margin-left: 30px;
+    margin-top: 30px;
+    grid-area: biodata-5;
+}
+
+.output-six {
+    grid-area: biodata-6;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.grid-container {
+    display: grid;
+  grid-template-areas:
+    'biodata-1 biodata-2 biodata-3 biodata-4 biodata-4'
+    'biodata-1 biodata-5 biodata-5 biodata-5 biodata-6';    
+  grid-gap: 10px;
+}
+
+table.biodata {
+  border: 2px solid #000000;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: cambria;
+}
+
+table.biodata td,
+table.biodata th {
+  border: 1px solid #000000;
+  padding: 2px 2px;
+}
+table.biodata tbody td {
+  font-family: cambria;
+  font-size: 10px;
+}
+
+table.biodata thead {
+  border-bottom: 2px solid #000000;
+}
+table.biodata thead th {
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  border-left: 2px solid #000000;
+}
+table.biodata thead th:first-child {
+  border-left: none;
+}
+
+table.biodata tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #dcebf7 0%,
+    #d4e6f6 66%,
+    #d0e4f5 100%
+  );
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
+  border-top: 2px solid #444444;
+}
+table.biodata tfoot td {
+  font-size: 14px;
+}
+table.biodata tfoot .links {
+  text-align: right;
+}
+table.biodata tfoot .links a {
+  display: inline-block;
+
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.biodata .column-biodata-title {
+  border-right: 0px solid #000;
+}
+.biodata .column-biodata-value {
+  border-left: 0px solid #000;
+}
+
+.section-table {
+  border-bottom: 2px solid #000;
+}
+.border-left-none {
+  border-left: 0px solid #000 !important;
+}
+
+table.index-value {
+  border: 2px solid #000000;
+  /* width: 100%; */
+  text-align: left;
+  border-collapse: collapse;
+  font-family: cambria;
+}
+
+table.index-value td,
+table.index-value th {
+  border: 1px solid #000000;
+  padding: 2px 15px;
+}
+table.index-value tbody td {
+  font-family: cambria;
+  font-size: 10px;
+}
+
+.column-point {
+  text-align: center;
+}
+
+.column-title-point {
+  text-align: left;
+}
