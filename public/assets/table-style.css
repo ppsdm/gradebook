@@ -152,3 +152,11 @@ table.index-value tbody td {
 .column-title-point {
   text-align: left;
 }
+
+.subtest-text-center {
+    text-align: center;
+}
+
+.subtest-text-left {
+    text-align: left;
+}

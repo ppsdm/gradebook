@@ -537,75 +537,75 @@
                     </div>
 
                     <div class="output-four">
-                        <img style="width: 450px;" src="<?php echo url("assets/img/Lingkaran.png"); ?>">
+                        <img style="width: 450px;" src="<?php echo url("assets/img/KOSTICK.png"); ?>">
                     </div>
 
                     <div class="output-five">
                         <table class="biodata">
-                            <tr>
+                            <tr class="subtest-text-center">
                                 <td>SUBTEST</td>
                                 <td>RS</td>
                                 <td>SS</td>
                                 <td>SELESAI </td>
                                 <td>BENAR</td>
                             </tr>
-                            <tr>
-                                <td>PM ADVANCE</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">PM ADVANCE</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>COMPREHENSION</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">COMPREHENSION</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>INFORMATION</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">INFORMATION</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>LOGIKA VERBAL</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">LOGIKA VERBAL</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>ANALOGI VERBAL</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">ANALOGI VERBAL</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>ARITMATIKA</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">ARITMATIKA</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>ADMINISTRASI ADKUDAG-4</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">ADMINISTRASI ADKUDAG-4</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>TEST-E</td>
+                            <tr class="subtest-text-center">
+                                <td class="subtest-text-left">TEST-E</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
+                            <tr class="subtest-text-center">
                                 <td colspan="3">TOTAL</td>
                                 <td></td>
                                 <td></td>
@@ -614,8 +614,8 @@
                     </div>
 
                     <div class="output-six">
-                        <table class="biodata">
-                            <tr>
+                        <table class="biodata" style="text-align: center;">
+                            <tr style="height: 20px; text-align:center;">
                                 <td colspan="2"> HOLLAND </td>
                             </tr>
                             <tr>
@@ -646,8 +646,8 @@
                                 <td>C</td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td colspan="2"> HOLLAND </td>
+                            <tr style="height: 30px;">
+                                <td colspan="2"></td>
                             </tr>
                         </table>
                     </div>
