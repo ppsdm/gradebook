@@ -24,3 +24,4 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('report', 'ReportController@index');
+$router->get('report-tpa', 'ReportTpaController@index');
