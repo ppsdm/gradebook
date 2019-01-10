@@ -205,7 +205,8 @@
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['display_text'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['value'] }}</td>
                                         <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday']['value'])->age : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday_' . $i]['value'])->age : "-" }}</td>
+
                                         <td>{{ $userProfile['extra_fields']['anak_pendidikan_' . $i] ? $userProfile['extra_fields']['anak_pendidikan_' . $i]['value'] : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_pekerjaan_' . $i] ? $userProfile['extra_fields']['anak_pekerjaan_' . $i]['value'] : "-" }}</td>
                                     </tr>
