@@ -15,19 +15,15 @@
                         <table class="riwayat_pekerjaan">
                             <tr class="title-table-lk">
                                 <td>Nama Perusahaan\Instansi</td>
-                                <td>Bergerak Dibidang</td>
                                 <td>Tahun</td>
                                 <td>Jabatan Terakhir</td>
-                                <td>Alasan Berhenti</td>
                             </tr>
                             @for($i = 1;$i < 10;$i++)
                                 @if(isset($userProfile['extra_fields']['perusahaan_' . $i]))
                                     <tr class="body-table-lk">
                                         <td>{{ $userProfile['extra_fields']['perusahaan_' . $i]['value'] }}</td>
-                                        <td>-</td>
                                         <td>{{ $userProfile['extra_fields']['mulai_kerja_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['jabatan_' . $i]['value'] }}</td>
-                                        <td>-</td>
                                     </tr>
                                 @else
                                     @break
@@ -58,61 +54,6 @@
                                     @break
                                 @endif
                             @endfor
-                        </table>
-                    </div>
-                    <div>
-                        <div class="title-lk">
-                            <h4>PENGALAMAN MENGIKUTI PSIKOTES<small>(Diurut kebelakang dari yang terakhir)</small></h4>
-                        </div>
-                        <table class="organisasi">
-                            <tr class="title-table-lk">
-                                <td>Bulan / Tahun</td>
-                                <td>Untuk Kepentingan</td>
-                                <td>Pengirim</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div>
-                        <br/>
-                        <div class="title-lk">
-                            <small>Jika dibutuhkan data tambahan mengenai diri saya, saya mengijinkan pemeriksa untuk bertanya tentang diri saya kepada orang-orang berikut ini :</small>
-                        </div>
-                        <table class="organisasi">
-                            <tr class="title-table-lk">
-                                <td>Nama</td>
-                                <td>Nomor Telepon / HP</td>
-                                <td>Hubungan dengan diri saya</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
                         </table>
                     </div>
                 </div>
@@ -221,106 +162,6 @@
                         <small> Indeks Kumulatif (IPK) pada saat tamat Diploma / S1: {{ $userProfile['extra_fields']['nilai_ipk_1']['value'] ?: "-" }}</small><br/>
                         <small> Indeks Kumulatif (IPK) pada saat tamat S2: {{ $userProfile['extra_fields']['nilai_ipk_2']['value'] ?: "-" }}</small>
                     </div>
-                    <div>
-                        <div class="title-lk">
-                            <h4>KURSUS / PELATIHAN YANG PERNAH DIIKUTI</h4>
-                        </div>
-                        <table class="organisasi">
-                            <tr class="title-table-lk">
-                                <td>Jenis Kursus / Pelatihan</td>
-                                <td>Tahun</td>
-                                <td>Lama Kursus</td>
-                                <td>Ijazah / Sertifikat</td>
-                                <td>Dibiayai Oleh</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div>
-                        <div class="title-lk">
-                            <h4>BAHASA YANG DIKUASAI</h4>
-                        </div>
-                        <div class="left-panel">
-                            <table class="organisasi">
-                                <tr class="title-table-lk">
-                                    <td colspan="2">BAHASA ASING YANG DIKUASAI</td>
-                                </tr>
-                                <tr class="body-table-lk">
-                                    <td>X</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr class="body-table-lk">
-                                    <td>X</td>
-                                    <td>X</td>
-                                </tr>
-                                <tr class="body-table-lk">
-                                    <td>X</td>
-                                    <td>X</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="right-panel">
-                        <table class="organisasi">
-                            <tr class="title-table-lk">
-                                <td colspan="2">BAHASA DAERAH YANG DIKUASAI</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                            <tr class="body-table-lk">
-                                <td>X</td>
-                                <td>X</td>
-                            </tr>
-                        </table>
-                        </div>
-                        
-                    </div>
                 </div>
                 <div class="right-panel">
                     <div>
@@ -362,7 +203,7 @@
                                 @if(isset($userProfile['extra_fields']['anak_' . $i]))
                                     <tr class="body-table-lk">
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['display_text'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['anak_' . $i] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['anak_' . $i]['value'] }}</td>
                                         <td>-</td>
                                         <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday']['value'])->age : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_pendidikan_' . $i] ? $userProfile['extra_fields']['anak_pendidikan_' . $i]['value'] : "-" }}</td>
@@ -372,7 +213,6 @@
                                     @break
                                 @endif
                             @endfor
-
                         </table>
                         <br>
                         <small>*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>
@@ -390,6 +230,7 @@
                                 <td>Pendidikan *)</td>
                                 <td>Pekerjaan *)</td>
                             </tr>
+
                             <tr class="body-table-lk">
                                 <td>Ayah</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ayah']['value'] : "-" }}</td>
@@ -406,21 +247,21 @@
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu_pendidikan']['value'] : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu_pekerjaan']['value'] : "-" }}</td>
                             </tr>
-
                             @for($i = 1;$i < 10;$i++)
                                 @if(isset($userProfile['extra_fields']['saudara_' . $i]))
                                     <tr class="body-table-lk">
                                         <td>{{ $userProfile['extra_fields']['saudara_' . $i]['display_text'] . ' ' . $i }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_' . $i]['value'] }}</td>
                                         <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['saudara_birthday_' . $i] ? \Carbon\Carbon::parse($userProfile['extra_fields']['saudara_birthday']['value'])->age : "-" }}</td>
-                                        <td>{{ $userProfile['extra_fields']['saudara_pendidikan_' . $i] ? $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] : "-" }}</td>
-                                        <td>{{ $userProfile['extra_fields']['saudara_pekerjaan_' . $i] ? $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['saudara_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['saudara_birthday']['value'])->age : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] : "-" }}</td>
                                     </tr>
                                 @else
                                     @break
                                 @endif
                             @endfor
+
                         </table>
                         <br/>
                         <small>*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>

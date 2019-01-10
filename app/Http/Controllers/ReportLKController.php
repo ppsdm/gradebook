@@ -19,7 +19,7 @@ class ReportLKController extends Controller
     public function show($id)
     {
         $client = new Client();
-        $response = $client->get('http://rest.ppsdm.com:5000/getUserProfile/' . $id);
+        $response = $client->get('http://localhost:5000/getUserProfile/' . $id);
         $userProfile = json_decode($response->getBody(), true);
         return view('report-lk', ['userProfile' => $userProfile['data']]);
     }
