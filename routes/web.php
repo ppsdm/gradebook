@@ -22,3 +22,6 @@ $router->get('foo', function () use ($router) {
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('report', 'ReportController@index');
+$router->get('report-tpa', 'ReportTpaController@index');
