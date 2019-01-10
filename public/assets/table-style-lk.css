@@ -1,0 +1,113 @@
+body {
+  font-family: Calibri, Candara, Segoe, Segoe UI, Arial, sans-serif;
+  text-align: justify;
+}
+table {
+  page-break-inside: auto;
+}
+tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+thead {
+  display: table-header-group;
+}
+tfoot {
+  display: table-footer-group;
+}
+
+table.riwayat_pekerjaan {
+  /* border: 2px solid #000000; */
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: cambria;
+  border: 2px solid #000000;
+}
+
+.riwayat-note {
+  font-size: 10px;
+}
+
+table.riwayat_pekerjaan td,
+table.riwayat_pekerjaan th {
+  border: 1px solid #000000;
+  padding: 2px 2px;
+}
+
+table.riwayat_pekerjaan td {
+  font-family: cambria;
+  font-size: 14px;
+}
+
+/* organisasi */
+table.organisasi {
+  /* border: 2px solid #000000; */
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: cambria;
+  border: 2px solid #000000;
+}
+
+table.organisasi td,
+table.organisasi th {
+  border: 1px solid #000000;
+  padding: 2px 2px;
+}
+
+table.organisasi td {
+  font-family: cambria;
+  font-size: 14px;
+}
+
+.title-lk h4 {
+  font-size: 14px;
+}
+
+.title-table-lk {
+  font-weight: 700;
+  text-align: center;
+}
+
+.body-table-lk {
+    text-align: center;
+}
+
+.body-jenis-tes {
+  text-align: left;
+}
+
+.collumn-empty {
+  height: 20px;
+}
+
+.title-table-lk-simulasi {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.border-empty {
+    border: 0px;
+}
+
+.left-panel {
+  float: left;
+  width: 45%;
+}
+
+.right-panel {
+  float: right;
+  width: 45%;
+}
+
+.lk-profile-title {
+  text-align: center;
+}
+
+table.table-profile td {
+  padding-top: 12px;
+}
