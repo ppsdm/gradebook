@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-// use GuzzleHttp\Exception\GuzzleException;
-// use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 class ReportController extends Controller
 {
@@ -16,12 +16,17 @@ class ReportController extends Controller
         //
     }
 
-    public function index()
+    public function index($userId, $courseId)
     {
-        // $client = new \GuzzleHttp\Client();
-        // $response = $client->get('http://localhost:5000/getresult/i153529384897102299/i153529349888522067');
-        // return json_decode($response->getBody(), true);
-        return view('report-view');
+        // dd($courseId);
+        $client = new Client;
+        $response = $client->get('http://rest.ppsdm.com:5000/getresult/'. $userId .  '/' . $courseId);
+        $reportReguler =  json_decode($response->getBody(), true);
+
+        $response = $client->get('http://rest.ppsdm.com:5000/getUserProfile/' . $userId);
+        $userProfile = json_decode($response->getBody(), true);
+
+        return view('report-view', ['reportReguler' => $reportReguler['data']], ['userProfile' => $userProfile['data']]);
     }
 
     //
