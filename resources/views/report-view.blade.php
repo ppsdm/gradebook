@@ -613,7 +613,7 @@
                         </table>
                     </div>
 
-                    <div class="output-six">
+                    <!-- <div class="output-six">
                         <table class="biodata" style="text-align: center;">
                             <tr style="height: 20px; text-align:center;">
                                 <td colspan="2"> HOLLAND </td>
@@ -650,7 +650,7 @@
                                 <td colspan="2"></td>
                             </tr>
                         </table>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </div>

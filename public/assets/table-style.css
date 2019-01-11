@@ -49,7 +49,7 @@ tfoot {
     display: grid;
   grid-template-areas:
     'biodata-1 biodata-2 biodata-3 biodata-4 biodata-4'
-    'biodata-1 biodata-5 biodata-5 biodata-5 biodata-6';    
+    'biodata-1 biodata-5 biodata-5 biodata-5 biodata-5';    
   grid-gap: 10px;
 }
 
