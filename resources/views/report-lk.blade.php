@@ -84,7 +84,7 @@
                         </tr>
                         <tr>
                             <td>Alamat</td>
-                            <td>: {{ $userProfile['address'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['alamat'] ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
                         </tr>
                         <tr>
                             <td>Telepon / HP</td>
@@ -96,35 +96,35 @@
                         </tr>
                         <tr>
                             <td>Facebook</td>
-                            <td>: {{ $userProfile['extra_fields']['facebook']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['facebook'] ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Instagram</td>
-                            <td>: {{ $userProfile['extra_fields']['instagram']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['instagram'] ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Twitter</td>
-                            <td>: {{ $userProfile['extra_fields']['twitter']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['twitter'] ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Pendidikan Terakhir</td>
-                            <td>:</td>
+                            <td>: {{ $userProfile['extra_fields']['jenjang_1'] ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Agama / Kepercayaan</td>
-                            <td>: {{ $userProfile['extra_fields']['religion']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['religion'] ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Suku Bangsa / Asal Bangsa</td>
-                            <td>: {{ $userProfile['extra_fields']['suku_bangsa']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['suku_bangsa'] ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Jabatan Saat Ini</td>
-                            <td>: {{ $userProfile['extra_fields']['jabatan_saat_ini']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['jabatan_saat_ini'] ? $userProfile['extra_fields']['jabatan_saat_ini']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Prospek Jabatan</td>
-                            <td>: {{ $userProfile['extra_fields']['prospek_jabatan']['value'] }}</td>
+                            <td>: {{ $userProfile['extra_fields']['prospek_jabatan'] ? $userProfile['extra_fields']['prospek_jabatan']['value'] : '-' }}</td>
                         </tr>
                     </table>
                 </div>
@@ -168,13 +168,17 @@
                         <div class="title-lk">
                             <h4>STATUS PERKAWINAN<small>(Pilih salah satu)</small></h4>
                         </div>
+                        @php
+                            $statusNikah = $userProfile['extra_fields']['status_nikah'] ? $userProfile['extra_fields']['status_nikah']['value'] : '-'
+                        @endphp
+
                         <div class="left-panel">
-                            <input type="checkbox" checked>Belum Menikah<br>
-                            <input type="checkbox">Bercerai<br>
+                            <input type="checkbox" {{ ( $statusNikah == 'Belum' ) ? "checked" : "disabled" }}>Belum Menikah<br>
+                            <input type="checkbox" {{ ( $statusNikah == 'Cerai' ) ? "checked" : "disabled" }}>Bercerai<br>
                         </div>
                         <div class="right-panel">
-                            <input type="checkbox">Sudah Menikah, Tahun<br>
-                            <input type="checkbox">Janda / Duda (pasangan meninggal)<br>
+                            <input type="checkbox" {{ ( $statusNikah == 'Menikah' ) ? "checked" : "disabled" }}>Sudah Menikah, Tahun<br>
+                            <input type="checkbox" {{ ( $statusNikah == 'JandaDuda' ) ? "checked" : "disabled" }}>Janda / Duda (pasangan meninggal)<br>
                         </div>
                     </div>
                     <div>
