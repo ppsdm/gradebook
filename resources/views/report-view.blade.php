@@ -383,87 +383,87 @@
                         <table class="index-value">
                             <tr>
                                 <td>G</td>
-                                <td>7</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['g'] }}</td>
                             </tr>
                             <tr>
                                 <td>A</td>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['a'] }}</td>
                             </tr>
                             <tr>
                                 <td>L</td>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['l'] }}</td>
                             </tr>
                             <tr>
                                 <td>P</td>
-                                <td>2</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['p'] }}</td>
                             </tr>
                             <tr>
                                 <td>I</td>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['i'] }}</td>
                             </tr>
                             <tr>
                                 <td>T</td>
-                                <td>5</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['t'] }}</td>
                             </tr>
                             <tr>
                                 <td>V</td>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['v'] }}</td>
                             </tr>
                             <tr>
                                 <td>X</td>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['x'] }}</td>
                             </tr>
                             <tr>
                                 <td>S</td>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['s'] }}</td>
                             </tr>
                             <tr>
                                 <td>B</td>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['b'] }}</td>
                             </tr>
                             <tr>
                                 <td>O</td>
-                                <td>8</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['o'] }}</td>
                             </tr>
                             <tr>
                                 <td>R</td>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['r'] }}</td>
                             </tr>
                             <tr>
                                 <td>D</td>
-                                <td>2</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['d'] }}</td>
                             </tr>
                             <tr>
                                 <td>C</td>
-                                <td>2</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['c'] }}</td>
                             </tr>
                             <tr>
                                 <td>Z</td>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['z'] }}</td>
                             </tr>
                             <tr>
                                 <td>E</td>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['e'] }}</td>
                             </tr>
                             <tr>
                                 <td>K</td>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['k'] }}</td>
                             </tr>
                             <tr>
                                 <td>F</td>
-                                <td>5</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['f'] }}</td>
                             </tr>
                             <tr>
                                 <td>W</td>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['w'] }}</td>
                             </tr>
                             <tr>
                                 <td>N</td>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['raw']['n'] }}</td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>90</td>
+                                <td>{{ $reportReguler['papi']['scores']['total'] }}</td>
                             </tr>
                         </table>
                     </div>
@@ -471,67 +471,67 @@
                     <div class="output-three">
                         <table class="index-value">
                             <tr>
-                                <td>7</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['g'] }}</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['a'] }}</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['l'] }}</td>
                             </tr>
                             <tr>
-                                <td>2</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['p'] }}</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['i'] }}</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['t'] }}</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['v'] }}</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['x'] }}</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['s'] }}</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['b'] }}</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['o'] }}</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['r'] }}</td>
                             </tr>
                             <tr>
-                                <td>2</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['d'] }}</td>
                             </tr>
                             <tr>
-                                <td>2</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['c'] }}</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['z'] }}</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['e'] }}</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['k'] }}</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['f'] }}</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['w'] }}</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>{{ $reportReguler['papi']['scores']['scaled']['n'] }}</td>
                             </tr>
                             <tr>
-                                <td>90</td>
+                                <td>{{ $reportReguler['papi']['scores']['total'] }}</td>
                             </tr>
                         </table>
                     </div>
