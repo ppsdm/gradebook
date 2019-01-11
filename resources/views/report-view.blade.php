@@ -3,6 +3,8 @@
         <title>Report</title>
         <link rel="stylesheet" type="text/css" href="<?php echo url('assets/style-custom.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo url('assets/table-style.css') ?>">
+        <script src="<?php echo url('assets/d3.min.js') ?>"></script>
+        <script src="<?php echo url('assets/radarChart.js') ?>"></script>
     </head>
     <body>
         <div class="A4 landscape">
@@ -58,16 +60,6 @@
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Intelegensi Umum</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="column-point">
-                                <td class="column-title-point">Daya Tangkap</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -537,7 +529,74 @@
                     </div>
 
                     <div class="output-four">
-                        <img style="width: 450px;" src="<?php echo url("assets/img/KOSTICK.png"); ?>">
+                        <div class="radarChart" style="background-image: url('<?php echo url('assets/img/KOSTICK.png') ?>'); background-position: center; background-repeat: no-repeat;background-size: 450px 450px; height: 450px; width: 550px; "></div>
+                        <script>
+
+                            /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+             
+                            //////////////////////////////////////////////////////////////
+                            //////////////////////// Set-Up //////////////////////////////
+                            //////////////////////////////////////////////////////////////
+             
+                            var margin = {top: 77, right: 0, bottom: 35, left: 127},
+                                width = Math.min(425, window.innerWidth - 10) - margin.left - margin.right,
+                                height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+             
+                            //////////////////////////////////////////////////////////////
+                            ////////////////////////// Data //////////////////////////////
+                            //////////////////////////////////////////////////////////////
+                            var data = [
+                                [
+                                <?php
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['g'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['a'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['l'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['p'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['i'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['t'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['v'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['x'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['s'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['b'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['o'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['r'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['d'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['c'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['z'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['e'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['k'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['f'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['w'])."'},";
+                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['n'])."'},";
+                                ?>
+                                ]
+                            ];
+             
+                            //////////////////////////////////////////////////////////////
+                            //////////////////// Draw the Chart //////////////////////////
+                            //////////////////////////////////////////////////////////////
+             
+                            var color = d3.scale.ordinal()
+                            .range(['#332c2a','#35274E']);
+             
+                            var radarChartOptions = {
+                                w: width,
+                                h: height,
+                                margin: margin,
+                                maxValue: 6,
+                                levels: 5,
+                                roundStrokes: false,
+                                color: color,
+                                opacityArea: 0.5,
+                                opacityCircles: 0,
+                                dotRadius: 3,
+                                strokeWidth: 2,
+                                wrapWidth: 10,
+                                labelFactor: 10,
+                            };
+                            //Call function to draw the Radar chart
+                            RadarChart(".radarChart", data, radarChartOptions);
+                          </script>
                     </div>
 
                     <div class="output-five">
