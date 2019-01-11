@@ -23,6 +23,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('report', 'ReportController@index');
+$router->get('report/{userId}/{courseId}', 'ReportController@index');
 $router->get('report-tpa', 'ReportTpaController@index');
 $router->get('report-lk/{id}', 'ReportLKController@show');

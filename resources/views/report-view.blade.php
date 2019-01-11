@@ -12,11 +12,11 @@
                         <table class="biodata">
                             <tr>
                                 <td class="column-biodata-title">NOMOR</td>
-                                <td colspan="7" class="column-biodata-value">0001 BHN 03122018 </td>
+                            <td colspan="7" class="column-biodata-value"></td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">NAMA</td>
-                                <td colspan="7" class="column-biodata-value">PRAMESWARI ANNISA S</td>
+                                <td colspan="7" class="column-biodata-value">{{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">JENIS KELAMIN</td>
@@ -551,38 +551,38 @@
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">PM ADVANCE</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['apm']['answers']['correct'] }}</td>
+                                <td>{{ $reportReguler['apm']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['apm']['answers']['correct'] / ($reportReguler['apm']['answers']['correct'] + $reportReguler['apm']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['apm']['answers']['incorrect'] / ($reportReguler['apm']['answers']['correct'] + $reportReguler['apm']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">COMPREHENSION</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['compre']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['compre']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['compre']['answers']['correct'] / ($reportReguler['compre']['answers']['correct'] + $reportReguler['compre']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['compre']['answers']['incorrect'] / ($reportReguler['compre']['answers']['correct'] + $reportReguler['compre']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">INFORMATION</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['tkdinfo']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['tkdinfo']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['tkdinfo']['answers']['correct'] / ($reportReguler['tkdinfo']['answers']['correct'] + $reportReguler['tkdinfo']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['tkdinfo']['answers']['incorrect'] / ($reportReguler['tkdinfo']['answers']['correct'] + $reportReguler['tkdinfo']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">LOGIKA VERBAL</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['tkdidiot']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['tkdidiot']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['tkdidiot']['answers']['correct'] / ($reportReguler['tkdidiot']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['tkdidiot']['answers']['incorrect'] / ($reportReguler['tkdidiot']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">ANALOGI VERBAL</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['tkdanalogiverbal']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['tkdanalogiverbal']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['tkdanalogiverbal']['answers']['correct'] / ($reportReguler['tkdanalogiverbal']['answers']['correct'] + $reportReguler['tkdanalogiverbal']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['tkdanalogiverbal']['answers']['incorrect'] / ($reportReguler['tkdanalogiverbal']['answers']['correct'] + $reportReguler['tkdanalogiverbal']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">ARITMATIKA</td>
@@ -593,17 +593,17 @@
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">ADMINISTRASI ADKUDAG-4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['gatb4']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['gatb4']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['gatb4']['answers']['correct'] / ($reportReguler['gatb4']['answers']['correct'] + $reportReguler['tese']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['gatb4']['answers']['incorrect'] / ($reportReguler['gatb4']['answers']['correct'] + $reportReguler['tese']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">TEST-E</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $reportReguler['tese']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['tese']['answers']['incorrect'] }}</td>
+                                <td>{{ number_format($reportReguler['tese']['answers']['correct'] / ($reportReguler['tese']['answers']['correct'] + $reportReguler['tese']['answers']['empty']) * 100) . ' %' }}</td>
+                                <td>{{ number_format($reportReguler['tese']['answers']['incorrect'] / ($reportReguler['tese']['answers']['correct'] + $reportReguler['tese']['answers']['empty']) * 100) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td colspan="3">TOTAL</td>
