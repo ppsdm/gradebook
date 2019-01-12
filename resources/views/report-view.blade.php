@@ -50,133 +50,301 @@
                             </tr>
                             <tr class="column-point column-biodata-value section-table">
                                 <td class="column-biodata-value border-left-none"></td>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
+                                <td style="width:10px; ">1</td>
+                                <td style="width:10px; ">2</td>
+                                <td style="width:10px; ">3</td>
+                                <td style="width:10px; ">4</td>
+                                <td style="width:10px; ">5</td>
+                                <td style="width:10px; ">6</td>
+                                <td style="width:10px; ">7</td>
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Intelegensi Umum</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $intelegensiUmum = ( $reportReguler['apm']['answers']['correct'] + $reportReguler['gatb4']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['correct'] ) / 3;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $intelegensiUmum)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Daya Tangkap</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $dayaTangkap = ( $reportReguler['compre']['answers']['correct'] + $reportReguler['tkdanalogiverbal']['answers']['correct'] + $reportReguler['tese']['answers']['correct'] ) / 3;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $dayaTangkap)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
+                            </tr>
+                            <tr class="column-point">
+                                <td class="column-title-point">Pemecahan Masalah</td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $pm = ( $reportReguler['apm']['answers']['correct'] + $reportReguler['gatb4']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['correct'] ) / 3;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $pm)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Kemampuan Analisa Sintesa</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $kas = ( $reportReguler['apm']['answers']['correct'] + $reportReguler['gatb4']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['correct'] + $reportReguler['tese']['answers']['correct'] ) / 4;  
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $kas)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Logika Berpikir</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $logikaBerpikir = ( $reportReguler['tese']['answers']['correct'] + $reportReguler['gatb4']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['correct'] ) / 3;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $logikaBerpikir)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Penalaran Verbal</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $penalaranVerbal = ( $reportReguler['compre']['answers']['correct'] + $reportReguler['tkdanalogiverbal']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['correct'] ) / 3;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $penalaranVerbal)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Penalaran Numerik</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $penalaranNUumerik = ( $reportReguler['gatb4']['answers']['correct'] + $reportReguler['tese']['answers']['correct'] ) / 2; 
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $penalaranNUumerik)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Wawasan Pengetahuan</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $wawasanPengetahuan = ( $reportReguler['compre']['answers']['correct'] + $reportReguler['tkdinfo']['answers']['correct'] ) / 2; 
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $wawasanPengetahuan)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Kemampuan Abstrak</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $kemampuanAbstrak = ( ($reportReguler['apm']['answers']['correct'] * 2) + $reportReguler['tkdidiot']['answers']['correct'] + $reportReguler['tese']['answers']['correct'] ) / 4; 
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $kemampuanAbstrak)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
+                            <!-- WIP: adkudag4 -->
                             <tr class="column-point">
                                 <td class="column-title-point">Kemampuan Praktis</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $kemampuanPraktis = ( $reportReguler['tese']['answers']['correct'] + $reportReguler['tese']['answers']['correct'] ) / 2; 
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $kemampuanPraktis)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Kemampuan Keteknikan</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $kemampuanKeteknikan = $reportReguler['tese']['answers']['correct']; 
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $kemampuanKeteknikan)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
+                            <!-- WIP: adkudag4 -->
                             <tr class="column-point">
                                 <td class="column-title-point">Daya Ingat</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $dayaIngat = $reportReguler['compre']['answers']['correct'] + ($reportReguler['tkdinfo']['answers']['correct'] * 2) + $reportReguler['tese']['answers']['correct'] / 4;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $dayaIngat)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point section-table">
                                 <td class="column-title-point">Kemampuan dan Proses Belajar</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @php
+                                    $backgroundGrey = "#e0e0e0";
+                                    $backgroundWhite = "#ffffff";
+                                    $kpb = $reportReguler['compre']['answers']['correct'] + $reportReguler['tkdinfo']['answers']['correct'] + $reportReguler['apm']['answers']['correct'] / 2;
+                                @endphp
+                                @for($i = 1; $i<=7; $i++)
+                                    @php
+                                        $background = $backgroundWhite;
+                                        if($i == 4) {
+                                            $background = $backgroundGrey;
+                                        }
+                                    @endphp
+
+                                    @if($i == $kpb)
+                                        <td style="background-color:{{ $background }};">X</td>
+                                    @else
+                                        <td style="background-color:{{ $background }};"></td>
+                                    @endif
+                                @endfor
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Kematangan Sosial</td>
@@ -454,8 +622,20 @@
                                 <td>{{ $reportReguler['papi']['scores']['raw']['n'] }}</td>
                             </tr>
                             <tr>
+                                @php
+                                    $total = $reportReguler['papi']['scores']['raw']['g'] + $reportReguler['papi']['scores']['raw']['a'] +
+                                            $reportReguler['papi']['scores']['raw']['l'] + $reportReguler['papi']['scores']['raw']['p'] +
+                                            $reportReguler['papi']['scores']['raw']['i'] + $reportReguler['papi']['scores']['raw']['t'] +
+                                            $reportReguler['papi']['scores']['raw']['v'] + $reportReguler['papi']['scores']['raw']['x'] +
+                                            $reportReguler['papi']['scores']['raw']['s'] + $reportReguler['papi']['scores']['raw']['b'] +
+                                            $reportReguler['papi']['scores']['raw']['o'] + $reportReguler['papi']['scores']['raw']['r'] +
+                                            $reportReguler['papi']['scores']['raw']['d'] + $reportReguler['papi']['scores']['raw']['c'] +
+                                            $reportReguler['papi']['scores']['raw']['z'] + $reportReguler['papi']['scores']['raw']['e'] +
+                                            $reportReguler['papi']['scores']['raw']['k'] + $reportReguler['papi']['scores']['raw']['f'] +
+                                            $reportReguler['papi']['scores']['raw']['w'] + $reportReguler['papi']['scores']['raw']['n'];
+                                @endphp
                                 <td></td>
-                                <td>{{ $reportReguler['papi']['scores']['total'] }}</td>
+                                <td>{{ $total }}</td>
                             </tr>
                         </table>
                     </div>
@@ -523,7 +703,19 @@
                                 <td>{{ $reportReguler['papi']['scores']['scaled']['n'] }}</td>
                             </tr>
                             <tr>
-                                <td>{{ $reportReguler['papi']['scores']['total'] }}</td>
+                                @php
+                                    $totalScores = $reportReguler['papi']['scores']['scaled']['g'] + $reportReguler['papi']['scores']['scaled']['a'] +
+                                            $reportReguler['papi']['scores']['scaled']['l'] + $reportReguler['papi']['scores']['scaled']['p'] +
+                                            $reportReguler['papi']['scores']['scaled']['i'] + $reportReguler['papi']['scores']['scaled']['t'] +
+                                            $reportReguler['papi']['scores']['scaled']['v'] + $reportReguler['papi']['scores']['scaled']['x'] +
+                                            $reportReguler['papi']['scores']['scaled']['s'] + $reportReguler['papi']['scores']['scaled']['b'] +
+                                            $reportReguler['papi']['scores']['scaled']['o'] + $reportReguler['papi']['scores']['scaled']['r'] +
+                                            $reportReguler['papi']['scores']['scaled']['d'] + $reportReguler['papi']['scores']['scaled']['c'] +
+                                            $reportReguler['papi']['scores']['scaled']['z'] + $reportReguler['papi']['scores']['scaled']['e'] +
+                                            $reportReguler['papi']['scores']['scaled']['k'] + $reportReguler['papi']['scores']['scaled']['f'] +
+                                            $reportReguler['papi']['scores']['scaled']['w'] + $reportReguler['papi']['scores']['scaled']['n'];
+                                @endphp
+                                <td>{{ $totalScores }}</td>
                             </tr>
                         </table>
                     </div>
@@ -631,7 +823,7 @@
                             </tr>
                             <tr class="subtest-text-center">
                                 <td class="subtest-text-left">LOGIKA VERBAL</td>
-                                <td>{{ $reportReguler['tkdidiot']['answers']['correct']}}</td>
+                                <td>{{ $reportReguler['tkdidiot']['answers']['correct'] }}</td>
                                 <td>{{ $reportReguler['tkdidiot']['answers']['incorrect'] }}</td>
                                 <td>{{ number_format($reportReguler['tkdidiot']['answers']['correct'] / ($reportReguler['tkdidiot']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['empty']) * 100) . ' %' }}</td>
                                 <td>{{ number_format($reportReguler['tkdidiot']['answers']['incorrect'] / ($reportReguler['tkdidiot']['answers']['correct'] + $reportReguler['tkdidiot']['answers']['empty']) * 100) . ' %' }}</td>
