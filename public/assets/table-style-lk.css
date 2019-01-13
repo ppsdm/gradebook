@@ -101,11 +101,20 @@ table.organisasi td {
 
 .right-panel {
   float: right;
-  width: 45%;
+  width: 50%;
 }
 
 .lk-profile-title {
   text-align: center;
+}
+
+.lk-profile-image {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  top: 130px;
+  border: 1px solid #e0e0e0;
+  padding: 2px;
 }
 
 table.table-profile td {
