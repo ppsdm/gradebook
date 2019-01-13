@@ -62,6 +62,9 @@
                         <h3>LEMBAR KEHIDUPAN</h3>
                         <h4>RAHASIA</h4>
                     </div>
+                    <div class="lk-profile-image">
+                        <img style="width: 100px;" src={{ "http://online.ppsdm.com/app/upload/users/" . $userProfile['id'] . "/" . $userProfile['id'] . "/" . $userProfile['picture_uri']}}>
+                    </div>
                     <table class="table-profile">
                         <tr>
                             <td>Nomor Test</td>
@@ -209,7 +212,7 @@
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['display_text'] }}</td>
                                         <td>{{ explode("::", $userProfile['extra_fields']['anak_' . $i]['value'])[1] }}</td>
                                         <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday_' . $i]['value'])->format('d/m/Y') : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday_' . $i]['value'])->format('d/m/Y') : "-" }}</td>
 
                                         <td>{{ $userProfile['extra_fields']['anak_pendidikan_' . $i] ? $userProfile['extra_fields']['anak_pendidikan_' . $i]['value'] : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_pekerjaan_' . $i] ? $userProfile['extra_fields']['anak_pekerjaan_' . $i]['value'] : "-" }}</td>
