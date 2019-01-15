@@ -16,7 +16,7 @@ class ReportLKController extends Controller
         //
     }
 
-    public function show($id)
+    public function show($id, $courseId)
     {
         $client = new Client();
         $response = $client->get('http://rest.ppsdm.com:5000/getUserProfile/' . $id);
