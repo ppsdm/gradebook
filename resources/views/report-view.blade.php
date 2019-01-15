@@ -1086,8 +1086,8 @@
                             </tr>
                             <tr class="subtest-text-center">
                                 <td colspan="3">TOTAL</td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ round($reportReguler['output']['kecepatan_percentage'] * 100,2)}}%</td>
+                                <td>{{ round($reportReguler['output']['ketelitian_percentage'] * 100,2)}}%</td>
                             </tr>
                         </table>
                     </div>
