@@ -113,6 +113,7 @@
                         </table>
                     </div>
                 </div>
+
                 <div class="right-panel">
                     <div class="lk-profile-title">
                         <h3>LEMBAR KEHIDUPAN</h3>
@@ -225,6 +226,56 @@
                         <small> Indeks Kumulatif (IPK) pada saat tamat Diploma / S1: {{ $userProfile['extra_fields']['nilai_ipk_1']['value'] ?: "-" }}</small><br/>
                         <small> Indeks Kumulatif (IPK) pada saat tamat S2: {{ $userProfile['extra_fields']['nilai_ipk_2']['value'] ?: "-" }}</small>
                     </div>
+                    <div>    
+                        <div class="title-lk">
+                            <h4>PENGALAMAN PSIKOTES</h4>
+                        </div>
+                        <table class="riwayat_pekerjaan">
+                            <tr class="title-table-lk">
+                                <td>Tanggal</td>
+                                <td>Untuk Kepentingan</td>
+                                <td>Pengirim</td>
+        
+                            </tr>
+                            @for($i = 1;$i < 10;$i++)
+                                @if(isset($userProfile['extra_fields']['psikotes_date_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['psikotes_date_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['psikotes_kepentingan_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['psikotes_pengirim_' . $i]['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                    </div>
+                    <div>    
+                        <div class="title-lk">
+                            <h4>REFERENSI</h4>
+                        </div>
+                        <table class="riwayat_pekerjaan">
+                            <tr class="title-table-lk">
+                                <td>Nama</td>
+                                <td>Telepon</td>
+                                <td>Hubungan dengan diri</td>
+
+                            </tr>
+                            @for($i = 1;$i < 10;$i++)
+                                @if(isset($userProfile['extra_fields']['referensi_nama_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['referensi_nama_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['referensi_telepon_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['referensi_hubungan_' . $i]['value'] }}</td>
+
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                     
+                    </div>
                 </div>
                 <div class="right-panel">
                     <div>
@@ -272,7 +323,7 @@
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['display_text'] }}</td>
                                         <td>{{ explode("::", $userProfile['extra_fields']['anak_' . $i]['value'])[1] }}</td>
                                         <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday_' . $i]['value'])->format('d/m/Y') : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday_' . $i]['value'])->age : "-" }}</td>
 
                                         <td>{{ $userProfile['extra_fields']['anak_pendidikan_' . $i] ? $userProfile['extra_fields']['anak_pendidikan_' . $i]['value'] : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_pekerjaan_' . $i] ? $userProfile['extra_fields']['anak_pekerjaan_' . $i]['value'] : "-" }}</td>
@@ -321,7 +372,7 @@
                                         <td>{{ $userProfile['extra_fields']['saudara_' . $i]['display_text'] . ' ' . $i }}</td>
                                         <td>{{ explode("::", $userProfile['extra_fields']['saudara_' . $i]['value'])[1] }}</td>
                                         <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['saudara_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['saudara_birthday_' . $i]['value'])->format('d/m/Y') : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['saudara_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['saudara_birthday_' . $i]['value'])->age : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] : "-" }}</td>
                                     </tr>

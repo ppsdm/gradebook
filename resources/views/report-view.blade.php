@@ -22,15 +22,15 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">JENIS KELAMIN</td>
-                                <td colspan="7"class="column-biodata-value">Perempuan</td>
+                                <td colspan="7"class="column-biodata-value">{{ $userProfile['extra_fields']['gender']['value'] }}</td>
                             </tr>
                             <tr>
-                                <td class="column-biodata-title">UMUR</td>
-                                <td colspan="7" class="column-biodata-value">25</td>
+                                <td class="column-biodata-title">USIA</td>
+                                <td colspan="7" class="column-biodata-value">{{ \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'])->age }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">PENDIDIKAN</td>
-                                <td colspan="7" class="column-biodata-value">S2 </td>
+                                <td colspan="7" class="column-biodata-value">{{$userProfile['extra_fields']['jenjang_1']['value']}} </td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TANGGAL TEST</td>
