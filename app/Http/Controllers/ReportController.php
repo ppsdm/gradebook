@@ -20,7 +20,7 @@ class ReportController extends Controller
     {
         // dd($courseId);
         $client = new Client;
-        $response = $client->get('http://rest.ppsdm.com:5000/getresult/'. $userId .  '/' . $courseId);
+        $response = $client->get('http://rest.ppsdm.com:5000/getreguler/'. $userId .  '/' . $courseId);
         $reportReguler =  json_decode($response->getBody(), true);
 
         $response = $client->get('http://rest.ppsdm.com:5000/getUserProfile/' . $userId);
