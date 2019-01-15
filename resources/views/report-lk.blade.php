@@ -56,6 +56,62 @@
                             @endfor
                         </table>
                     </div>
+                    <div>
+                        <div class="title-lk">
+                            <h4>KURSUS / PELATIHAN YANG PERNAH DIIKUTI</h4>
+                        </div>
+                        <table class="kursus">
+                            <tr class="title-table-lk">
+                                <td>Nama Kursus</td>
+                                <td>Biaya</td>
+                                <td>Sertifikat/Ijazah</td>
+                                <td>Lama Kursus</td>
+                                <td>Tahun Kursus</td>
+
+                            </tr>
+                            @for($i = 1;$i <= 10 ;$i++)
+                                @if(isset($userProfile['extra_fields']['kursus_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['kursus_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['kursus_dibiayai_' . $i]['value'] ? $userProfile['extra_fields']['kursus_dibiayai_' . $i]['value'] : '-' }}</td>
+                                        <td>{{ $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] ? $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] : '-' }}</td>
+                                        <td>{{ $userProfile['extra_fields']['kursus_lama_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['kursus_tahun_' . $i]['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                    </div>
+                    <div>
+                        <div class="title-lk">
+                            <h4>BAHASA YANG DIKUASAI</h4>
+                        </div>
+                        <table class="bahasa">
+                            <tr class="title-table-lk">
+                                <td>Bahasa Asing</td>
+                                <td>Aktif/Pasif</td>
+                                <td> - </td>
+                                <td>Bahasa Daerah</td>
+                                <td>Aktif/Pasif</td>
+
+                            </tr>
+                            @for($i = 1;$i <= 10 ;$i++)
+                                @if(isset($userProfile['extra_fields']['bahasa_asing_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['bahasa_asing_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['bahasa_asing_aktif_' . $i]['value'] }}</td>
+                                        <td> - </td>
+                                        <td>{{ $userProfile['extra_fields']['bahasa_daerah_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['bahasa_daerah_aktif_' . $i]['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                    </div>
                 </div>
                 <div class="right-panel">
                     <div class="lk-profile-title">
@@ -78,7 +134,7 @@
                             <td>Tempat Tanggal Lahir</td>
                             <td>: 
                                 {{ $userProfile['extra_fields']['birthplace'] ? $userProfile['extra_fields']['birthplace']['value'] : '-'  }}, 
-                                {{ $userProfile['extra_fields']['birthdate'] ? $userProfile['extra_fields']['birthdate']['value'] : '-'  }}
+                                {{ $userProfile['extra_fields']['birthday']['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'] )->format('d-m-Y') : '-'  }}
                             </td>
                         </tr>
                         <tr>
@@ -108,6 +164,10 @@
                         <tr>
                             <td>Twitter</td>
                             <td>: {{ $userProfile['extra_fields']['twitter'] ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn</td>
+                            <td>: {{ $userProfile['extra_fields']['linkedin_url'] ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
                         </tr>
                         <tr>
                             <td>Pendidikan Terakhir</td>
