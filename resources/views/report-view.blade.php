@@ -34,7 +34,7 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TANGGAL TEST</td>
-                                <td colspan="7" class="column-biodata-value">03122018 </td>
+                                <td colspan="7" class="column-biodata-value">{{explode('T',$reportReguler['datestamp'])[0] }} </td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TUJUAN TEST</td>
