@@ -61,6 +61,48 @@ table.organisasi td {
   font-size: 14px;
 }
 
+/* Kursus */
+table.kursus {
+  /* border: 2px solid #000000; */
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: cambria;
+  border: 2px solid #000000;
+}
+
+table.kursus td,
+table.kursus th {
+  border: 1px solid #000000;
+  padding: 2px 2px;
+}
+
+table.kursus td {
+  font-family: cambria;
+  font-size: 14px;
+}
+
+/* Bahasa */
+table.bahasa {
+  /* border: 2px solid #000000; */
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: cambria;
+  border: 2px solid #000000;
+}
+
+table.bahasa td,
+table.bahasa th {
+  border: 1px solid #000000;
+  padding: 2px 2px;
+}
+
+table.bahasa td {
+  font-family: cambria;
+  font-size: 14px;
+}
+
 .title-lk h4 {
   font-size: 14px;
 }
