@@ -958,9 +958,9 @@
                             //////////////////////// Set-Up //////////////////////////////
                             //////////////////////////////////////////////////////////////
              
-                            var margin = {top: 77, right: 0, bottom: 35, left: 127},
-                                width = Math.min(425, window.innerWidth - 10) - margin.left - margin.right,
-                                height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+                            var margin = {top: 85, right: 0, bottom: 270, left: 50},
+                                width = Math.min(500, window.innerWidth - 10) - margin.left - margin.right,
+                                height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 15);
              
                             //////////////////////////////////////////////////////////////
                             ////////////////////////// Data //////////////////////////////
@@ -968,6 +968,9 @@
                             var data = [
                                 [
                                 <?php
+                                    $papiK = ($reportReguler['papi']['scores']['raw']['k'] - 9 );
+                                    $papiZ = $reportReguler['papi']['scores']['raw']['z'] - 9;
+
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['g'])."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['a'])."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['l'])."'},";
@@ -982,9 +985,9 @@
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['r'])."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['d'])."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['c'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['z'])."'},";
+                                    echo "{axis:'',value:'".trim( $papiZ < 0 ? $papiZ * -1 : $papiZ)."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['e'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['k'])."'},";
+                                    echo "{axis:'',value:'".trim( $papiK < 0 ? $papiK * -1 : $papiK )."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['f'])."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['w'])."'},";
                                     echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['n'])."'},";
