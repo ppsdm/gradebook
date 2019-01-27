@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">USIA</td>
-                                <td colspan="7" class="column-biodata-value">{{ \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'])->age }}</td>
+                                <td colspan="7" class="column-biodata-value">{{ \Carbon\Carbon::parse($userProfile['extra_fields']['birthdate']['value'])->age }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">PENDIDIKAN</td>
