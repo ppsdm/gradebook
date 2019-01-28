@@ -1183,8 +1183,9 @@
                         <tr>
                             <td style="width:70px;">NAMA</td>
                             <td> : </td>
-                            <td style="min-width:200px;">{{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
+                            <td style="min-width:200px;">{{ strtoupper($userProfile['firstname'] . ' ' . $userProfile['lastname']) }}</td>
                             <td>PERUSAHAAN</td>
+                            <td> : </td>
                             <td></td>
                         </tr>
                         <tr>
