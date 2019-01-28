@@ -1178,12 +1178,31 @@
         </div>
         <div class="A4 potrait">
             <section class="sheet padding-15mm">
+                <div class='left' style="margin-top:-20px;">
+                    <table>
+                        <tr>
+                            <td style="width:70px;">NAMA</td>
+                            <td> : </td>
+                            <td style="min-width:200px;">{{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
+                            <td>PERUSAHAAN</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width:70px;">No. Tes </td>
+                            <td> : </td>
+                            <td style="min-width:200px;"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <hr>
+                </div>
                 <div class="container">
-                    <h4>Uraian : </h4>
+                    <h4>SCORE INTERPRETATION: </br>WORK DIRECTION</h4>
                     @php
                         foreach ($reportReguler["papi"]["uraian_2"] as $data) {
                             $uraian = explode("::", $data);
-                            $output = "<p>[".trim($uraian[0])."] - " . $uraian[1]."</p>";
+                            $output = "<p style='font-size: 15px;'>[".trim($uraian[0])."] - " . $uraian[1]."</p>";
                             echo $output;
                         } 
                     @endphp
