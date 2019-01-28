@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">USIA</td>
-                                <td colspan="7" class="column-biodata-value">{{ \Carbon\Carbon::parse($userProfile['extra_fields']['birthdate']['value'])->age }}</td>
+                                <td colspan="7" class="column-biodata-value">{{ \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'])->age }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">PENDIDIKAN</td>
@@ -1176,5 +1176,38 @@
                 </div>
             </section>
         </div>
+        <div class="A4 potrait">
+            <section class="sheet padding-15mm">
+                <div class="container">
+                    <h4>Uraian : </h4>
+                    @php
+                        foreach ($reportReguler["papi"]["uraian_2"] as $data) {
+                            $uraian = explode("::", $data);
+                            $output = "<p>[".trim($uraian[0])."] - " . $uraian[1]."</p>";
+                            echo $output;
+                        } 
+                    @endphp
+                </div>
+            </section>
+            @if(count($reportReguler['uraianNonBase']) > 0)
+            <section class="sheet padding-15mm">
+                <div class="container">
+                    @php
+                        // dd($reportReguler['uraianNonBase'][0]);
+                        foreach ($reportReguler['uraianNonBase'] as $data) {
+                            $uraianNonBase = explode(" ::", $data);
+                            if (count($uraianNonBase) > 1){
+                                $output = "<p>[".trim($uraianNonBase[0])."] - " . $uraianNonBase[1]."</p>";
+                            } else {
+                                $output = "<p>[".trim($uraianNonBase[0])."]</p>";
+                            }
+                            
+                            echo $output;
+                        } 
+                    @endphp
+                </div>
+            </section>
+            @endif
+        </div>  
     </body>
 </html>   
