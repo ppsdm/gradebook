@@ -105,6 +105,7 @@ table.bahasa td {
 
 .title-lk h4 {
   font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .title-table-lk {
@@ -113,7 +114,8 @@ table.bahasa td {
 }
 
 .body-table-lk {
-    text-align: center;
+  text-align: center;
+  font-size: 14px;
 }
 
 .body-jenis-tes {
@@ -125,15 +127,15 @@ table.bahasa td {
 }
 
 .title-table-lk-simulasi {
-    text-align: center;
+  text-align: center;
 }
 
 .text-left {
-    text-align: left;
+  text-align: left;
 }
 
 .border-empty {
-    border: 0px;
+  border: 0px;
 }
 
 .left-panel {
@@ -148,17 +150,39 @@ table.bahasa td {
 
 .lk-profile-title {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .lk-profile-image {
   text-align: right;
   position: absolute;
-  right: 20px;
-  top: 130px;
+  right: 40px;
+  top: 110px;
   border: 1px solid #e0e0e0;
   padding: 2px;
 }
 
 table.table-profile td {
-  padding-top: 12px;
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-14 {
+  font-size: 14px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.color-black-grey {
+  color: #101010;
 }

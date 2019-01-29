@@ -5,9 +5,88 @@
         <link rel="stylesheet" type="text/css" href="<?php echo url('assets/table-style-lk.css') ?>">
     </head>
     <body>
-        <div class="A4 landscape">
-            <section class="sheet padding-5mm">
-                <div class="left-panel">
+        <div class="A4 potrait">
+            <section class="sheet padding-10mm">
+                    <div>
+                            <div class="lk-profile-title">
+                                <div class="text-18 text-bold">LEMBAR KEHIDUPAN</div>
+                                <div class="text-16 text-bold">RAHASIA</div>
+                                <hr>
+                            </div>
+                            <div class="lk-profile-image">
+                                <img style="width: 120px;" src={{ "http://online.ppsdm.com/app/upload/users/" . $userProfile['id'] . "/" . $userProfile['id'] . "/" . $userProfile['picture_uri']}}>
+                            </div>
+                            <table class="table-profile">
+                                <tr>
+                                    <td>Nomor Test</td>
+                                    <td>:</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td>: {{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tempat Tanggal Lahir</td>
+                                    <td>: 
+                                        {{ $userProfile['extra_fields']['birthplace'] ? $userProfile['extra_fields']['birthplace']['value'] : '-'  }}, 
+                                        {{ $userProfile['extra_fields']['birthday']['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'] )->format('d-m-Y') : '-'  }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jenis Kelamin</td>
+                                    <td>: {{ $userProfile['extra_fields']['gender'] ? $userProfile['extra_fields']['gender']['value'] : '-'  }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat</td>
+                                    <td>: {{ $userProfile['extra_fields']['alamat'] ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Telepon / HP</td>
+                                    <td>: {{ $userProfile['phone'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>eMail</td>
+                                    <td>: {{ $userProfile['email'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Facebook</td>
+                                    <td>: {{ $userProfile['extra_fields']['facebook'] ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Instagram</td>
+                                    <td>: {{ $userProfile['extra_fields']['instagram'] ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Twitter</td>
+                                    <td>: {{ $userProfile['extra_fields']['twitter'] ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>LinkedIn</td>
+                                    <td>: {{ $userProfile['extra_fields']['linkedin_url'] ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Pendidikan Terakhir</td>
+                                    <td>: {{ $userProfile['extra_fields']['jenjang_1'] ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Agama / Kepercayaan</td>
+                                    <td>: {{ $userProfile['extra_fields']['religion'] ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Suku Bangsa / Asal Bangsa</td>
+                                    <td>: {{ $userProfile['extra_fields']['suku_bangsa'] ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jabatan Saat Ini</td>
+                                    <td>: {{ $userProfile['extra_fields']['jabatan_saat_ini'] ? $userProfile['extra_fields']['jabatan_saat_ini']['value'] : '-' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Prospek Jabatan</td>
+                                    <td>: {{ $userProfile['extra_fields']['prospek_jabatan'] ? $userProfile['extra_fields']['prospek_jabatan']['value'] : '-' }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                <div>
                     <div>    
                         <div class="title-lk">
                             <h4>RIWAYAT PEKERJAAN <small>(Diurut kebelakang dari yang terakhir/pekerjaan anda saat ini)</small></h4>
@@ -113,101 +192,22 @@
                         </table>
                     </div>
                 </div>
-
-                <div class="right-panel">
-                    <div class="lk-profile-title">
-                        <h3>LEMBAR KEHIDUPAN</h3>
-                        <h4>RAHASIA</h4>
-                    </div>
-                    <div class="lk-profile-image">
-                        <img style="width: 100px;" src={{ "http://online.ppsdm.com/app/upload/users/" . $userProfile['id'] . "/" . $userProfile['id'] . "/" . $userProfile['picture_uri']}}>
-                    </div>
-                    <table class="table-profile">
-                        <tr>
-                            <td>Nomor Test</td>
-                            <td>:</td>
-                        </tr>
-                        <tr>
-                            <td>Nama</td>
-                            <td>: {{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
-                        </tr>
-                        <tr>
-                            <td>Tempat Tanggal Lahir</td>
-                            <td>: 
-                                {{ $userProfile['extra_fields']['birthplace'] ? $userProfile['extra_fields']['birthplace']['value'] : '-'  }}, 
-                                {{ $userProfile['extra_fields']['birthday']['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'] )->format('d-m-Y') : '-'  }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Kelamin</td>
-                            <td>: {{ $userProfile['extra_fields']['gender'] ? $userProfile['extra_fields']['gender']['value'] : '-'  }}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat</td>
-                            <td>: {{ $userProfile['extra_fields']['alamat'] ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
-                        </tr>
-                        <tr>
-                            <td>Telepon / HP</td>
-                            <td>: {{ $userProfile['phone'] }}</td>
-                        </tr>
-                        <tr>
-                            <td>eMail</td>
-                            <td>: {{ $userProfile['email'] }}</td>
-                        </tr>
-                        <tr>
-                            <td>Facebook</td>
-                            <td>: {{ $userProfile['extra_fields']['facebook'] ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Instagram</td>
-                            <td>: {{ $userProfile['extra_fields']['instagram'] ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Twitter</td>
-                            <td>: {{ $userProfile['extra_fields']['twitter'] ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>LinkedIn</td>
-                            <td>: {{ $userProfile['extra_fields']['linkedin_url'] ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Pendidikan Terakhir</td>
-                            <td>: {{ $userProfile['extra_fields']['jenjang_1'] ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Agama / Kepercayaan</td>
-                            <td>: {{ $userProfile['extra_fields']['religion'] ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Suku Bangsa / Asal Bangsa</td>
-                            <td>: {{ $userProfile['extra_fields']['suku_bangsa'] ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Jabatan Saat Ini</td>
-                            <td>: {{ $userProfile['extra_fields']['jabatan_saat_ini'] ? $userProfile['extra_fields']['jabatan_saat_ini']['value'] : '-' }}</td>
-                        </tr>
-                        <tr>
-                            <td>Prospek Jabatan</td>
-                            <td>: {{ $userProfile['extra_fields']['prospek_jabatan'] ? $userProfile['extra_fields']['prospek_jabatan']['value'] : '-' }}</td>
-                        </tr>
-                    </table>
-                </div>
             </section>
         </div>
-        <div class="A4 landscape">
-            <section class="sheet padding-5mm">
-                <div class="left-panel">
+        <div class="A4 potrait">
+            <section class="sheet padding-10mm">
+                <div>
                     <div>    
                         <div class="title-lk">
                             <h4>RIWAYAT PENDIDIKAN <small>(Diurut kebelakang dari pendidikan tertinggi, termasuk yang masih dijalani)</small></h4>
                         </div>
                         <table class="riwayat_pekerjaan">
                             <tr class="title-table-lk">
-                                <td>Tingkat Pendidikan</td>
+                                <td style="width: 130px;">Tingkat Pendidikan</td>
                                 <td>Nama Sekolah/Perguruan Tinggi</td>
                                 <td>Fakultas / Jurusan</td>
-                                <td>Tahun Masuk</td>
-                                <td>Tahun Lulus</td>
+                                <td style="width: 70px;">Tahun Masuk</td>
+                                <td style="width: 70px;">Tahun Lulus</td>
                             </tr>
                             @for($i = 1;$i < 10;$i++)
                                 @if(isset($userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]))
@@ -223,8 +223,8 @@
                                 @endif
                             @endfor
                         </table>
-                        <small> Indeks Kumulatif (IPK) pada saat tamat Diploma / S1: {{ $userProfile['extra_fields']['nilai_ipk_1']['value'] ?: "-" }}</small><br/>
-                        <small> Indeks Kumulatif (IPK) pada saat tamat S2: {{ $userProfile['extra_fields']['nilai_ipk_2']['value'] ?: "-" }}</small>
+                        <small class="color-black-grey"> Indeks Kumulatif (IPK) pada saat tamat Diploma / S1: {{ $userProfile['extra_fields']['nilai_ipk_1']['value'] ?: "-" }}</small><br/>
+                        <small class="color-black-grey"> Indeks Kumulatif (IPK) pada saat tamat S2: {{ $userProfile['extra_fields']['nilai_ipk_2']['value'] ?: "-" }}</small>
                     </div>
                     <div>    
                         <div class="title-lk">
@@ -232,7 +232,7 @@
                         </div>
                         <table class="riwayat_pekerjaan">
                             <tr class="title-table-lk">
-                                <td>Tanggal</td>
+                                <td style="width: 130px; ">Tanggal</td>
                                 <td>Untuk Kepentingan</td>
                                 <td>Pengirim</td>
         
@@ -256,7 +256,7 @@
                         </div>
                         <table class="riwayat_pekerjaan">
                             <tr class="title-table-lk">
-                                <td>Nama</td>
+                                <td style="width: 200px;">Nama</td>
                                 <td>Telepon</td>
                                 <td>Hubungan dengan diri</td>
 
@@ -277,8 +277,8 @@
                      
                     </div>
                 </div>
-                <div class="right-panel">
-                    <div>
+                <div>
+                    <div style="padding-bottom: 20px;">
                         <div class="title-lk">
                             <h4>STATUS PERKAWINAN<small>(Pilih salah satu)</small></h4>
                         </div>
@@ -298,13 +298,13 @@
                     <div>
                         <br/>
                         <div class="title-lk">
-                            <h4>SUSUNAN KELUARGA <small>(Untuk yang sudah menikah, Tuliskan nama Istri/Suami dan anak-anak)</small></h4>
+                            <h4>SUSUNAN KELUARGA <small class="color-black-grey">(Untuk yang sudah menikah, Tuliskan nama Istri/Suami dan anak-anak)</small></h4>
                         </div>
                         <table class="organisasi">
                             <tr class="title-table-lk">
-                                <td></td>
-                                <td>Nama</td>
-                                <td>L/P</td>
+                                <td style="width: 110px; "></td>
+                                <td style="width: 150px; ">Nama</td>
+                                <td style="width: 30px; ">L/P</td>
                                 <td>Usia *)</td>
                                 <td>Pendidikan *)</td>
                                 <td>Pekerjaan *)</td>
@@ -333,8 +333,7 @@
                                 @endif
                             @endfor
                         </table>
-                        <br>
-                        <small>*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>
+                        <small class="color-black-grey">*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>
                     </div>  
                     <div>
                         <div class="title-lk">
@@ -342,9 +341,9 @@
                         </div>
                         <table class="organisasi">
                             <tr class="title-table-lk">
-                                <td></td>
-                                <td>Nama</td>
-                                <td>L/P</td>
+                                <td style="width: 110px; "></td>
+                                <td style="width: 150px; ">Nama</td>
+                                <td style="width: 30px; ">L/P</td>
                                 <td>Usia *)</td>
                                 <td>Pendidikan *)</td>
                                 <td>Pekerjaan *)</td>
@@ -382,8 +381,7 @@
                             @endfor
 
                         </table>
-                        <br/>
-                        <small>*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>
+                        <small class="color-black-grey">*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>
                     </div>  
                     
                 </div>
