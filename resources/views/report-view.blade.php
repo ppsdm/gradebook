@@ -1036,96 +1036,104 @@
                                     $apmCorrect = $reportReguler['apm']['answers']['correct'];
                                     $apmIncorrect = $reportReguler['apm']['answers']['incorrect'];
                                     $apmEmpty = $reportReguler['apm']['answers']['empty'];
+                                    $totalApm = $apmCorrect + $apmEmpty + $apmIncorrect;
                                ?>
                                 <td class="subtest-text-left">PM ADVANCE</td>
                                 <td>{{ $reportReguler['apm']['answers']['correct'] }}</td>
                                 <td>{{ $reportReguler['apm']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($apmCorrect + $apmIncorrect) / ( ($apmCorrect + $apmEmpty + $apmIncorrect) > 0 ? ($apmCorrect + $apmEmpty + $apmIncorrect) : 1 ) * 100) . ' %' }}</td>
-                                <td>{{ number_format($apmCorrect / ( ($apmCorrect + $apmEmpty + $apmIncorrect) > 0 ? ($apmCorrect + $apmEmpty + $apmIncorrect) : 1 ) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalApm > 0 ? (($apmCorrect + $apmIncorrect) / $totalApm * 100 ): 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalApm > 0 ? $apmCorrect / $totalApm * 100 : 0) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php
                                     $compreCorrect = $reportReguler['compre']['answers']['correct'];
                                     $compreIncorrect = $reportReguler['compre']['answers']['incorrect'];
                                     $compreEmpty = $reportReguler['compre']['answers']['empty'];
+                                    $totalCompre = $compreCorrect + $compreEmpty + $compreIncorrect;
                                 ?>
                                 <td class="subtest-text-left">COMPREHENSION</td>
                                 <td>{{ $reportReguler['compre']['answers']['correct']}}</td>
                                 <td>{{ $reportReguler['compre']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($compreCorrect + $compreIncorrect) / ( ( $compreCorrect + $compreEmpty + $compreIncorrect ) > 0 ? ( $compreCorrect + $compreEmpty + $compreIncorrect ) : 1 ) * 100) . ' %' }}</td>
-                                <td>{{ number_format($compreCorrect / ( ( $compreCorrect + $compreEmpty + $compreIncorrect ) > 0 ? ( $compreCorrect + $compreEmpty + $compreIncorrect ) : 1 ) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalCompre > 0 ? ($compreCorrect + $compreIncorrect) / $totalCompre * 100 : 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalCompre > 0 ? $compreCorrect / $totalCompre * 100 : 0) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php
                                     $infoCorrect = $reportReguler['tkdinfo']['answers']['correct'];
                                     $infoIncorrect = $reportReguler['tkdinfo']['answers']['incorrect'];
                                     $infoEmpty = $reportReguler['tkdinfo']['answers']['empty'];
+                                    $totalInfo = $infoCorrect + $infoEmpty + $infoIncorrect;
                                 ?>
                                 <td class="subtest-text-left">INFORMATION</td>
                                 <td>{{ $reportReguler['tkdinfo']['answers']['correct']}}</td>
                                 <td>{{ $reportReguler['tkdinfo']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($infoCorrect + $infoIncorrect) / (($infoCorrect + $infoEmpty + $infoIncorrect) > 0 ? ($infoCorrect + $infoEmpty + $infoIncorrect) : 1) * 100) . ' %' }}</td>
-                                <td>{{ number_format($infoCorrect / ( ($infoCorrect + $infoEmpty + $infoIncorrect) > 0 ? ($infoCorrect + $infoEmpty + $infoIncorrect) : 1) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalInfo > 0 ? ($infoCorrect + $infoIncorrect) / $totalInfo * 100 : 0) . ' %' }}</td>
+                                <td>{{ number_format( $totalInfo > 0 ? $infoCorrect / $totalInfo * 100 : 0)  . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php
                                     $idiotCorrect = $reportReguler['tkdidiot']['answers']['correct'];
                                     $idiotIncorrect = $reportReguler['tkdidiot']['answers']['incorrect'];
                                     $idiotEmpty = $reportReguler['tkdidiot']['answers']['empty'];
+                                    $totalIdiot = $idiotCorrect + $idiotEmpty + $idiotEmpty;
                                 ?>
                                 <td class="subtest-text-left">LOGIKA VERBAL</td>
                                 <td>{{ $reportReguler['tkdidiot']['answers']['correct'] }}</td>
                                 <td>{{ $reportReguler['tkdidiot']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($idiotCorrect + $idiotEmpty) / ( ($idiotCorrect + $idiotEmpty + $idiotEmpty) > 0 ? ($idiotCorrect + $idiotEmpty + $idiotEmpty) : 1) * 100) . ' %' }}</td>
-                                <td>{{ number_format($idiotCorrect / ( ($idiotCorrect + $idiotEmpty + $idiotEmpty) > 0 ? ($idiotCorrect + $idiotEmpty + $idiotEmpty) : 1) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalIdiot > 0 ? ($idiotCorrect + $idiotEmpty) / $totalIdiot * 100 : 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalIdiot > 0 ? $idiotCorrect / $totalIdiot * 100 : 0 ) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php
                                     $verbalCorrect = $reportReguler['tkdanalogiverbal']['answers']['correct'];
                                     $verbalIncorrect = $reportReguler['tkdanalogiverbal']['answers']['incorrect'];
                                     $verbalEmpty = $reportReguler['tkdanalogiverbal']['answers']['empty'];
+                                    $totalVerbal = $verbalCorrect + $verbalEmpty + $verbalIncorrect;
                                 ?>
                                 <td class="subtest-text-left">ANALOGI VERBAL</td>
                                 <td>{{ $reportReguler['tkdanalogiverbal']['answers']['correct']}}</td>
                                 <td>{{ $reportReguler['tkdanalogiverbal']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($verbalCorrect + $verbalIncorrect) / ( ($verbalCorrect + $verbalEmpty + $verbalIncorrect) > 0 ? ($verbalCorrect + $verbalEmpty + $verbalIncorrect) : 1) * 100) . ' %' }}</td>
-                                <td>{{ number_format($verbalCorrect / ( ($verbalCorrect + $verbalEmpty + $verbalIncorrect) > 0 ? ($verbalCorrect + $verbalEmpty + $verbalIncorrect) : 1) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalVerbal > 0 ? ($verbalCorrect + $verbalIncorrect) / $totalVerbal * 100 : 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalVerbal > 0 ? $verbalCorrect / $totalVerbal * 100 : 0 ) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php
                                     $gatbCorrect = $reportReguler['gatb4']['answers']['correct'];
                                     $gatbIncorrect = $reportReguler['gatb4']['answers']['incorrect'];
                                     $gatbEmpty = $reportReguler['gatb4']['answers']['empty'];
+                                    $totalGatb = $gatbCorrect + $gatbEmpty + $gatbIncorrect;
                                 ?>
                                 <td class="subtest-text-left">ARITMATIKA</td>
                                 <td>{{ $reportReguler['gatb4']['answers']['correct']}}</td>
                                 <td>{{ $reportReguler['gatb4']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($gatbCorrect + $gatbIncorrect) / ( ($gatbCorrect + $gatbEmpty + $gatbIncorrect) > 0 ? ($gatbCorrect + $gatbEmpty + $gatbIncorrect) : 1) * 100) . ' %' }}</td>
-                                <td>{{ number_format($gatbCorrect / ( ($gatbCorrect + $gatbEmpty + $gatbIncorrect) > 0 ? ($gatbCorrect + $gatbEmpty + $gatbIncorrect) : 1) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalGatb > 0 ? ($gatbCorrect + $gatbIncorrect) / $totalGatb * 100 : 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalGatb > 0 ? $gatbCorrect / $totalGatb * 100 : 0 ) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php   
                                     $adkudag4Correct = $reportReguler['adkudag4']['answers']['correct'];
                                     $adkudag4Incorrect = $reportReguler['adkudag4']['answers']['incorrect'];
-                                    $adkudag4Empty = $reportReguler['adkudag4']['answers']['empty'];    
+                                    $adkudag4Empty = $reportReguler['adkudag4']['answers']['empty']; 
+                                    $totalAdkudag4 = $adkudag4Correct + $adkudag4Empty + $adkudag4Incorrect;
                                 ?>
                                 <td class="subtest-text-left">ADMINISTRASI ADKUDAG-4</td>
                                 <td>{{ $reportReguler['adkudag4']['answers']['correct']}}</td>
                                 <td>{{ $reportReguler['adkudag4']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($adkudag4Correct + $adkudag4Incorrect) / ( ($adkudag4Correct + $adkudag4Empty + $adkudag4Incorrect) > 0 ? ($adkudag4Correct + $adkudag4Empty + $adkudag4Incorrect) : 1) * 100) . ' %' }}</td>
-                                <td>{{ number_format($adkudag4Correct / ( ($adkudag4Correct + $adkudag4Empty + $adkudag4Incorrect) > 0 ? ($adkudag4Correct + $adkudag4Empty + $adkudag4Incorrect) : 1) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalAdkudag4 > 0 ? ($adkudag4Correct + $adkudag4Incorrect) / $totalAdkudag4 * 100 : 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalAdkudag4 > 0 ? $adkudag4Correct  / $totalAdkudag4 * 100 : 0 ) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <?php
                                     $teseCorrect = $reportReguler['tese']['answers']['correct'];
                                     $tesseIncorrect = $reportReguler['tese']['answers']['incorrect'];
                                     $teseEmpty = $reportReguler['tese']['answers']['empty'];
+                                    $totalTese = $teseCorrect+ $teseEmpty + $tesseIncorrect;
                                 ?>
                                 <td class="subtest-text-left">TEST-E</td>
                                 <td>{{ $reportReguler['tese']['answers']['correct']}}</td>
                                 <td>{{ $reportReguler['tese']['scores']['scale20'] }}</td>
-                                <td>{{ number_format(($teseCorrect + $tesseIncorrect) / (($teseCorrect+ $teseEmpty + $tesseIncorrect) > 0 ? ($teseCorrect+ $teseEmpty + $tesseIncorrect) : 1) * 100) . ' %' }}</td>
-                                <td>{{ number_format($teseCorrect / (($teseCorrect+ $teseEmpty + $tesseIncorrect) > 0 ? ($teseCorrect+ $teseEmpty + $tesseIncorrect) : 1) * 100) . ' %' }}</td>
+                                <td>{{ number_format( $totalTese > 0 ? ($teseCorrect + $tesseIncorrect) / $totalTese * 100 : 0 ) . ' %' }}</td>
+                                <td>{{ number_format( $totalTese > 0 ? $teseCorrect / $totalTese * 100 : 0  ) . ' %' }}</td>
                             </tr>
                             <tr class="subtest-text-center">
                                 <td colspan="3">TOTAL</td>
