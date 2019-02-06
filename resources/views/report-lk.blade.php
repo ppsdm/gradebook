@@ -321,7 +321,7 @@
                                 @if(isset($userProfile['extra_fields']['anak_' . $i]))
                                     <tr class="body-table-lk">
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['display_text'] }}</td>
-                                        <td>{{ explode("::", $userProfile['extra_fields']['anak_' . $i]['value'])[1] }}</td>
+                                        <td>{{ explode("::", $userProfile['extra_fields']['anak_' . $i]['value'])[0] }}</td>
                                         <td>-</td>
                                         <td>{{ $userProfile['extra_fields']['anak_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['anak_birthday_' . $i]['value'])->age : "-" }}</td>
 
@@ -369,7 +369,7 @@
                                 @if(isset($userProfile['extra_fields']['saudara_' . $i]))
                                     <tr class="body-table-lk">
                                         <td>{{ $userProfile['extra_fields']['saudara_' . $i]['display_text'] . ' ' . $i }}</td>
-                                        <td>{{ explode("::", $userProfile['extra_fields']['saudara_' . $i]['value'])[1] }}</td>
+                                        <td>{{ explode("::", $userProfile['extra_fields']['saudara_' . $i]['value'])[0] }}</td>
                                         <td>-</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_birthday_' . $i]['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['saudara_birthday_' . $i]['value'])->age : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] : "-" }}</td>
