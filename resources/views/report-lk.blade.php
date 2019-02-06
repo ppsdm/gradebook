@@ -20,73 +20,171 @@
                                 <tr>
                                     <td>Nomor Test</td>
                                     <td>:</td>
+                                    <td> - </td>
                                 </tr>
                                 <tr>
                                     <td>Nama</td>
-                                    <td>: {{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
+                                    <td>:</td>
+                                    <td>{{ $userProfile['firstname'] . ' ' . $userProfile['lastname'] }}</td>
                                 </tr>
                                 <tr>
                                     <td>Tempat Tanggal Lahir</td>
-                                    <td>: 
+                                    <td>:</td>
+                                    <td>
                                         {{ $userProfile['extra_fields']['birthplace'] ? $userProfile['extra_fields']['birthplace']['value'] : '-'  }}, 
                                         {{ $userProfile['extra_fields']['birthday']['value'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['birthday']['value'] )->format('d-m-Y') : '-'  }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Jenis Kelamin</td>
-                                    <td>: {{ $userProfile['extra_fields']['gender'] ? $userProfile['extra_fields']['gender']['value'] : '-'  }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['gender']['value']) > 0 ? $userProfile['extra_fields']['gender']['value'] : '-'  }}</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat</td>
-                                    <td>: {{ $userProfile['extra_fields']['alamat'] ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
+                                    <td>:</td>
+                                    <td style="max-width: 400px;"> {{ strlen($userProfile['extra_fields']['alamat']['value']) > 0 ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
                                 </tr>
                                 <tr>
                                     <td>Telepon / HP</td>
-                                    <td>: {{ $userProfile['phone'] }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['phone']) > 0 ? $userProfile['phone'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>eMail</td>
-                                    <td>: {{ $userProfile['email'] }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['email'] ) > 0 ? $userProfile['email'] : '-'}}</td>
                                 </tr>
                                 <tr>
                                     <td>Facebook</td>
-                                    <td>: {{ $userProfile['extra_fields']['facebook'] ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['facebook']['value']) > 0 ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Instagram</td>
-                                    <td>: {{ $userProfile['extra_fields']['instagram'] ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['instagram']['value']) > 0 ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Twitter</td>
-                                    <td>: {{ $userProfile['extra_fields']['twitter'] ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['twitter']['value']) > 0 ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>LinkedIn</td>
-                                    <td>: {{ $userProfile['extra_fields']['linkedin_url'] ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['linkedin_url']['value']) > 0 ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Pendidikan Terakhir</td>
-                                    <td>: {{ $userProfile['extra_fields']['jenjang_1'] ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['jenjang_1']['value']) > 0 ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Agama / Kepercayaan</td>
-                                    <td>: {{ $userProfile['extra_fields']['religion'] ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['religion']['value'] ) > 0 ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Suku Bangsa / Asal Bangsa</td>
-                                    <td>: {{ $userProfile['extra_fields']['suku_bangsa'] ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['suku_bangsa']['value']) > 0 ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Jabatan Saat Ini</td>
-                                    <td>: {{ $userProfile['extra_fields']['jabatan_saat_ini'] ? $userProfile['extra_fields']['jabatan_saat_ini']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['jabatan_saat_ini']['value']) > 0 ? $userProfile['extra_fields']['jabatan_saat_ini']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Prospek Jabatan</td>
-                                    <td>: {{ $userProfile['extra_fields']['prospek_jabatan'] ? $userProfile['extra_fields']['prospek_jabatan']['value'] : '-' }}</td>
+                                    <td>:</td>
+                                    <td> {{ strlen($userProfile['extra_fields']['prospek_jabatan']['value']) >0 ? $userProfile['extra_fields']['prospek_jabatan']['value'] : '-' }}</td>
                                 </tr>
                             </table>
                         </div>
                 <div>
+                    <div>    
+                        <div class="title-lk">
+                            <h4>RIWAYAT PENDIDIKAN <small>(Diurut kebelakang dari pendidikan tertinggi, termasuk yang masih dijalani)</small></h4>
+                        </div>
+                        <table class="riwayat_pekerjaan">
+                            <tr class="title-table-lk">
+                                <td style="width: 130px;">Tingkat Pendidikan</td>
+                                <td>Nama Sekolah/Perguruan Tinggi</td>
+                                <td>Fakultas / Jurusan</td>
+                                <td style="width: 70px;">Tahun Masuk</td>
+                                <td style="width: 70px;">Tahun Lulus</td>
+                            </tr>
+                            @for($i = 1;$i < 10;$i++)
+                                @if(isset($userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['jenjang_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['fakultas_' . $i]['value'] }}</td>
+                                        <td></td>
+                                        <td>{{ $userProfile['extra_fields']['tahun_lulus_' . $i]['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                        <small class="color-black-grey"> Indeks Kumulatif (IPK) pada saat tamat Diploma / S1: {{ $userProfile['extra_fields']['nilai_ipk_1']['value'] ?: "-" }}</small><br/>
+                        <small class="color-black-grey"> Indeks Kumulatif (IPK) pada saat tamat S2: {{ $userProfile['extra_fields']['nilai_ipk_2']['value'] ?: "-" }}</small>
+                    </div>
+                    <div>
+                        <div class="title-lk">
+                            <h4>PENGALAMAN MEMIMPIN DAN BERORGANISASI</h4>
+                        </div>
+                        <table class="organisasi">
+                            <tr class="title-table-lk">
+                                <td>Nama Organisasi</td>
+                                <td>Jenis Organisasi</td>
+                                <td>Tahun</td>
+                                <td>Jabatan</td>
+                            </tr>
+                            @for($i = 1;$i < 10;$i++)
+                                @if(isset($userProfile['extra_fields']['organisasi_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['organisasi_' . $i]['value'] }}</td>
+                                        <td> </td>
+                                        <td>{{ $userProfile['extra_fields']['organisasi_tahun_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['organisasi_jabatan_' . $i]['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                    </div>
+                    <div>
+                        <div class="title-lk">
+                            <h4>BAHASA YANG DIKUASAI</h4>
+                        </div>
+                        <table class="bahasa">
+                            <tr class="title-table-lk">
+                                <td>Bahasa Asing</td>
+                                <td>Aktif/Pasif</td>
+                                <td> - </td>
+                                <td>Bahasa Daerah</td>
+                                <td>Aktif/Pasif</td>
+
+                            </tr>
+                            @for($i = 1;$i <= 10 ;$i++)
+                                @if(isset($userProfile['extra_fields']['bahasa_asing_' . $i]))
+                                    <tr class="body-table-lk">
+                                        <td>{{ $userProfile['extra_fields']['bahasa_asing_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['bahasa_asing_aktif_' . $i]['value'] }}</td>
+                                        <td></td>
+                                        <td>{{ $userProfile['extra_fields']['bahasa_daerah_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['bahasa_daerah_aktif_' . $i]['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                        </table>
+                    </div>
                     <div>    
                         <div class="title-lk">
                             <h4>RIWAYAT PEKERJAAN <small>(Diurut kebelakang dari yang terakhir/pekerjaan anda saat ini)</small></h4>
@@ -110,24 +208,29 @@
                             @endfor
                         </table>
                     </div>
-                    <div>
+                </div>
+            </section>
+        </div>
+        <div class="A4 potrait">
+            <section class="sheet padding-10mm">
+                <div>
+                    <div>    
                         <div class="title-lk">
-                            <h4>PENGALAMAN MEMIMPIN DAN BERORGANISASI</h4>
+                            <h4>PENGALAMAN PSIKOTES</h4>
                         </div>
-                        <table class="organisasi">
+                        <table class="riwayat_pekerjaan">
                             <tr class="title-table-lk">
-                                <td>Nama Organisasi</td>
-                                <td>Jenis Organisasi</td>
-                                <td>Tahun</td>
-                                <td>Jabatan</td>
+                                <td style="width: 130px; ">Tanggal</td>
+                                <td>Untuk Kepentingan</td>
+                                <td>Pengirim</td>
+        
                             </tr>
                             @for($i = 1;$i < 10;$i++)
-                                @if(isset($userProfile['extra_fields']['organisasi_' . $i]))
+                                @if(isset($userProfile['extra_fields']['psikotes_date_' . $i]))
                                     <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['organisasi_' . $i]['value'] }}</td>
-                                        <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['organisasi_tahun_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['organisasi_jabatan_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['psikotes_date_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['psikotes_kepentingan_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['psikotes_pengirim_' . $i]['value'] }}</td>
                                     </tr>
                                 @else
                                     @break
@@ -156,93 +259,6 @@
                                         <td>{{ $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] ? $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] : '-' }}</td>
                                         <td>{{ $userProfile['extra_fields']['kursus_lama_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['kursus_tahun_' . $i]['value'] }}</td>
-                                    </tr>
-                                @else
-                                    @break
-                                @endif
-                            @endfor
-                        </table>
-                    </div>
-                    <div>
-                        <div class="title-lk">
-                            <h4>BAHASA YANG DIKUASAI</h4>
-                        </div>
-                        <table class="bahasa">
-                            <tr class="title-table-lk">
-                                <td>Bahasa Asing</td>
-                                <td>Aktif/Pasif</td>
-                                <td> - </td>
-                                <td>Bahasa Daerah</td>
-                                <td>Aktif/Pasif</td>
-
-                            </tr>
-                            @for($i = 1;$i <= 10 ;$i++)
-                                @if(isset($userProfile['extra_fields']['bahasa_asing_' . $i]))
-                                    <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['bahasa_asing_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['bahasa_asing_aktif_' . $i]['value'] }}</td>
-                                        <td> - </td>
-                                        <td>{{ $userProfile['extra_fields']['bahasa_daerah_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['bahasa_daerah_aktif_' . $i]['value'] }}</td>
-                                    </tr>
-                                @else
-                                    @break
-                                @endif
-                            @endfor
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="A4 potrait">
-            <section class="sheet padding-10mm">
-                <div>
-                    <div>    
-                        <div class="title-lk">
-                            <h4>RIWAYAT PENDIDIKAN <small>(Diurut kebelakang dari pendidikan tertinggi, termasuk yang masih dijalani)</small></h4>
-                        </div>
-                        <table class="riwayat_pekerjaan">
-                            <tr class="title-table-lk">
-                                <td style="width: 130px;">Tingkat Pendidikan</td>
-                                <td>Nama Sekolah/Perguruan Tinggi</td>
-                                <td>Fakultas / Jurusan</td>
-                                <td style="width: 70px;">Tahun Masuk</td>
-                                <td style="width: 70px;">Tahun Lulus</td>
-                            </tr>
-                            @for($i = 1;$i < 10;$i++)
-                                @if(isset($userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]))
-                                    <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['jenjang_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['fakultas_' . $i]['value'] }}</td>
-                                        <td>-</td>
-                                        <td>{{ $userProfile['extra_fields']['tahun_lulus_' . $i]['value'] }}</td>
-                                    </tr>
-                                @else
-                                    @break
-                                @endif
-                            @endfor
-                        </table>
-                        <small class="color-black-grey"> Indeks Kumulatif (IPK) pada saat tamat Diploma / S1: {{ $userProfile['extra_fields']['nilai_ipk_1']['value'] ?: "-" }}</small><br/>
-                        <small class="color-black-grey"> Indeks Kumulatif (IPK) pada saat tamat S2: {{ $userProfile['extra_fields']['nilai_ipk_2']['value'] ?: "-" }}</small>
-                    </div>
-                    <div>    
-                        <div class="title-lk">
-                            <h4>PENGALAMAN PSIKOTES</h4>
-                        </div>
-                        <table class="riwayat_pekerjaan">
-                            <tr class="title-table-lk">
-                                <td style="width: 130px; ">Tanggal</td>
-                                <td>Untuk Kepentingan</td>
-                                <td>Pengirim</td>
-        
-                            </tr>
-                            @for($i = 1;$i < 10;$i++)
-                                @if(isset($userProfile['extra_fields']['psikotes_date_' . $i]))
-                                    <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['psikotes_date_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['psikotes_kepentingan_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['psikotes_pengirim_' . $i]['value'] }}</td>
                                     </tr>
                                 @else
                                     @break
