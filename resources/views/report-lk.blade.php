@@ -255,8 +255,8 @@
                                 @if(isset($userProfile['extra_fields']['kursus_' . $i]))
                                     <tr class="body-table-lk">
                                         <td>{{ $userProfile['extra_fields']['kursus_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['kursus_dibiayai_' . $i]['value'] ? $userProfile['extra_fields']['kursus_dibiayai_' . $i]['value'] : '-' }}</td>
-                                        <td>{{ $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] ? $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] : '-' }}</td>
+                                        <td>{{ $userProfile['extra_fields']['kursus_dibiayai_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['kursus_ijazah_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['kursus_lama_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['kursus_tahun_' . $i]['value'] }}</td>
                                     </tr>
