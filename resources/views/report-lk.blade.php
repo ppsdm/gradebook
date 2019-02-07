@@ -329,7 +329,7 @@
                                 <td>Istri/Suami</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['spouse']['value'] : "-" }}</td>
                                 <td>-</td>
-                                <td>{{ $userProfile['extra_fields']['spouse_birthyear'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['spouse_birthyear']['value'])->age: "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['spouse_birthyear'] ?  ($userProfile['extra_fields']['spouse_birthyear']['value'] == "-" ? "-" : Date("Y") - $userProfile['extra_fields']['spouse_birthyear']['value']) : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse_pendidikan'] ? $userProfile['extra_fields']['spouse_pendidikan']['value'] : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse_pekerjaan'] ? $userProfile['extra_fields']['spouse_pekerjaan']['value'] : "-" }}</td>
                             </tr>
@@ -339,7 +339,7 @@
                                         <td>{{ $userProfile['extra_fields']['anak_' . $i]['display_text'] }}</td>
                                         <td>{{$userProfile['extra_fields']['anak_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_gender_' . $i] ? $userProfile['extra_fields']['anak_gender_' . $i]['value'] : "-" }}</td>
-                                        <td>{{ $userProfile['extra_fields']['anak_birthyear_' . $i] ? $userProfile['extra_fields']['anak_birthyear_' . $i]['value']  : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['anak_birthyear_' . $i] ?  ($userProfile['extra_fields']['anak_birthyear_' . $i]['value'] == "-" ? "-" : Date("Y") - $userProfile['extra_fields']['anak_birthyear_' . $i]['value']) : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_pendidikan_' . $i] ? $userProfile['extra_fields']['anak_pendidikan_' . $i]['value'] : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['anak_pekerjaan_' . $i] ? $userProfile['extra_fields']['anak_pekerjaan_' . $i]['value'] : "-" }}</td>
                                     </tr>
@@ -368,7 +368,8 @@
                                 <td>Ayah</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ayah']['value'] : "-" }}</td>
                                 <td>L</td>
-                                <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ayah_birthyear']['value'] : "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['ayah_birthyear'] ?  ($userProfile['extra_fields']['ayah_birthyear']['value'] == "-" ? "-" : Date("Y") - $userProfile['extra_fields']['ayah_birthyear']['value']) : "-" }}</td>
+
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ayah_pendidikan']['value'] : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ayah_pekerjaan']['value'] : "-" }}</td>
                             </tr>
@@ -376,7 +377,7 @@
                                 <td>Ibu</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu']['value'] : "-" }}</td>
                                 <td>P</td>
-                                <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu_birthyear']['value']: "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['ibu_birthyear'] ?  ($userProfile['extra_fields']['ibu_birthyear']['value'] == "-" ? "-" : Date("Y") - $userProfile['extra_fields']['ibu_birthyear']['value']) : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu_pendidikan']['value'] : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu_pekerjaan']['value'] : "-" }}</td>
                             </tr>
@@ -386,7 +387,7 @@
                                         <td>{{ $userProfile['extra_fields']['saudara_' . $i]['display_text'] . ' ' . $i }}</td>
                                         <td>{{ explode("::", $userProfile['extra_fields']['saudara_' . $i]['value'])[0] }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_gender_' . $i]['value'] ? $userProfile['extra_fields']['saudara_gender_' . $i]['value'] : "-" }}</td>
-                                        <td>{{ $userProfile['extra_fields']['saudara_birthyear_' . $i]['value'] ? $userProfile['extra_fields']['saudara_birthyear_' . $i]['value'] : "-" }}</td>
+                                        <td>{{ $userProfile['extra_fields']['saudara_birthyear_' . $i] ?  ($userProfile['extra_fields']['saudara_birthyear_' . $i]['value'] == "-" ? "-" : Date("Y") - $userProfile['extra_fields']['saudara_birthyear_' . $i]['value']) : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pendidikan_' . $i]['value'] : "-" }}</td>
                                         <td>{{ $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] ? $userProfile['extra_fields']['saudara_pekerjaan_' . $i]['value'] : "-" }}</td>
                                     </tr>
