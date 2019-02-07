@@ -329,7 +329,7 @@
                                 <td>Istri/Suami</td>
                                 <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['spouse']['value'] : "-" }}</td>
                                 <td>-</td>
-                                <td>{{ $userProfile['extra_fields']['spouse_birthday'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['spouse_birthday']['value'])->age: "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['spouse_birthyear'] ? \Carbon\Carbon::parse($userProfile['extra_fields']['spouse_birthyear']['value'])->age: "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse_pendidikan'] ? $userProfile['extra_fields']['spouse_pendidikan']['value'] : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['spouse_pekerjaan'] ? $userProfile['extra_fields']['spouse_pekerjaan']['value'] : "-" }}</td>
                             </tr>
