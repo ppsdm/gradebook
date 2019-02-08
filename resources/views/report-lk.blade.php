@@ -368,20 +368,20 @@
 
                             <tr class="body-table-lk">
                                 <td>Ayah</td>
-                                <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ayah']['value'] : "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['ayah']['value']  ? $userProfile['extra_fields']['ayah']['value'] : "-" }}</td>
                                 <td>L</td>
                                 <td>{{ $userProfile['extra_fields']['ayah_birthyear'] ?  ($userProfile['extra_fields']['ayah_birthyear']['value'] == "-" ? "-" : (strlen($userProfile['extra_fields']['ayah_birthyear']['value']) > 4 ? \Carbon\Carbon::parse($userProfile['extra_fields']['ayah_birthyear']['value'])->age : Date("Y") - $userProfile['extra_fields']['ayah_birthyear']['value'] )) : "-" }}</td>
 
                                 <td>{{ $userProfile['extra_fields']['ayah_pendidikan']['value']  ? $userProfile['extra_fields']['ayah_pendidikan']['value'] : "-" }}</td>
-                                <td>{{ $userProfile['extra_fields']['ayah_pendidikan']['value']  ? $userProfile['extra_fields']['ayah_pekerjaan']['value'] : "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['ayah_pekerjaan']['value']  ? $userProfile['extra_fields']['ayah_pekerjaan']['value'] : "-" }}</td>
                             </tr>
                             <tr class="body-table-lk">
                                 <td>Ibu</td>
-                                <td>{{ $userProfile['extra_fields']['spouse'] ? $userProfile['extra_fields']['ibu']['value'] : "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['ibu']['value'] ? $userProfile['extra_fields']['ibu']['value'] : "-" }}</td>
                                 <td>P</td>
                                 <td>{{ $userProfile['extra_fields']['ibu_birthyear'] ?  ($userProfile['extra_fields']['ibu_birthyear']['value'] == "-" ? "-" : (strlen($userProfile['extra_fields']['ibu_birthyear']['value']) > 4 ? \Carbon\Carbon::parse($userProfile['extra_fields']['ibu_birthyear']['value'])->age : Date("Y") - $userProfile['extra_fields']['ibu_birthyear']['value'] )) : "-" }}</td>
                                 <td>{{ $userProfile['extra_fields']['ibu_pendidikan']['value']  ? $userProfile['extra_fields']['ibu_pendidikan']['value'] : "-" }}</td>
-                                <td>{{ $userProfile['extra_fields']['ibu_pendidikan']['value']  ? $userProfile['extra_fields']['ibu_pekerjaan']['value'] : "-" }}</td>
+                                <td>{{ $userProfile['extra_fields']['ibu_pekerjaan']['value']  ? $userProfile['extra_fields']['ibu_pekerjaan']['value'] : "-" }}</td>
                             </tr>
                             @for($i = 1;$i < 10;$i++)
                                 @if(isset($userProfile['extra_fields']['saudara_' . $i]))
