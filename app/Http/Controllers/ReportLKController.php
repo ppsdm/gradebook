@@ -26,15 +26,15 @@ class ReportLKController extends Controller
         $testData = json_decode($response_2->getBody(), true);
         switch ($courseId) {
             case 4:
-                return view('report-lk', ['userProfile' => $userProfile['data'],'testData' => $testData['data'] ]);
+                return view('report_lk_4', ['userProfile' => $userProfile['data'],'testData' => $testData['data'] ]);
                 break;
 
             case 10:
-                return view('report-lk-v2', ['userProfile' => $userProfile['data'], 'testData' => $testData['data']]);
+                return view('report_lk_10', ['userProfile' => $userProfile['data'], 'testData' => $testData['data']]);
                 break;
 
             default:
-                return view('report-lk', ['userProfile' => $userProfile['data']]);
+                return view('report_lk_4', ['userProfile' => $userProfile['data']]);
         }
     }
 
