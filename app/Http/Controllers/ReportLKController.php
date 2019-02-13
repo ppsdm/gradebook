@@ -21,9 +21,16 @@ class ReportLKController extends Controller
     {
         $client = new Client();
         $response = $client->get('http://rest.ppsdm.com:5000/getUserProfile/' . $id);
-        $response_2 = $client->get('http://rest.ppsdm.com:5000/getreguler/' . $id . '/' . $courseId);
+
         $userProfile = json_decode($response->getBody(), true);
-        $testData = json_decode($response_2->getBody(), true);
+        try {
+            $response_2 = $client->get('http://rest.ppsdm.com:5000/getResult/' . $id . '/' . $courseId);
+            $testData = json_decode($response_2->getBody(), true);
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            $response_2 = $e->getResponse();
+            $testData['data'] = [];
+        }
+
         switch ($courseId) {
             case 4:
                 return view('report_lk_4', ['userProfile' => $userProfile['data'],'testData' => $testData['data'] ]);

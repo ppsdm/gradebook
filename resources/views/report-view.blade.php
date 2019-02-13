@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo url('assets/table-style.css') ?>">
         <script src="<?php echo url('assets/d3.min.js') ?>"></script>
         <script src="<?php echo url('assets/radarChart.js') ?>"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="A4 landscape">
@@ -958,10 +959,21 @@
                             //////////////////////// Set-Up //////////////////////////////
                             //////////////////////////////////////////////////////////////
              
-                            var margin = {top: 85, right: 0, bottom: 270, left: 50},
-                                width = Math.min(500, window.innerWidth - 10) - margin.left - margin.right,
-                                height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 15);
+                            var margin = {top: 107, right: 0, bottom: 400, left: 154};
+                            var browserZoomLevel = Math.round(window.devicePixelRatio);
+                            //alert(browserZoomLevel);
+                                //width = Math.min(500, window.innerWidth - 10) - margin.left - margin.right,
+                                //height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 15);
+                                width = window.innerWidth * browserZoomLevel/10;
+                                width =240;
+                                //alert(window.innerWidth)
+                                height = window.innerHeight * browserZoomLevel/10;
+                                height = 240;
              
+
+                               
+
+
                             //////////////////////////////////////////////////////////////
                             ////////////////////////// Data //////////////////////////////
                             //////////////////////////////////////////////////////////////
@@ -970,31 +982,38 @@
                                 <?php
                                     $papiK = ($reportReguler['papi']['scores']['raw']['k'] - 9 );
                                     $papiZ = $reportReguler['papi']['scores']['raw']['z'] - 9;
+                                    $offset = 1;
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['g']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['a']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['l']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['p']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['i']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['t']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['v']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['x']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['s']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['b']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['o']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['r']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['d']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['c']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim( $papiZ < 0 ? $papiZ * -1 : $papiZ) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['e']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim( $papiK < 0 ? $papiK * -1 : $papiK ) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['f']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['w']) + $offset)."'},";
+                                    echo "{axis:'',value:'".(int)(trim($reportReguler['papi']['scores']['raw']['n']) + $offset)."'},";
 
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['g'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['a'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['l'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['p'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['i'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['t'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['v'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['x'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['s'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['b'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['o'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['r'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['d'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['c'])."'},";
-                                    echo "{axis:'',value:'".trim( $papiZ < 0 ? $papiZ * -1 : $papiZ)."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['e'])."'},";
-                                    echo "{axis:'',value:'".trim( $papiK < 0 ? $papiK * -1 : $papiK )."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['f'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['w'])."'},";
-                                    echo "{axis:'',value:'".trim($reportReguler['papi']['scores']['raw']['n'])."'},";
+
+                                    
+
+                                    
+
                                 ?>
                                 ]
                             ];
              
+                            
                             //////////////////////////////////////////////////////////////
                             //////////////////// Draw the Chart //////////////////////////
                             //////////////////////////////////////////////////////////////
@@ -1011,14 +1030,28 @@
                                 roundStrokes: false,
                                 color: color,
                                 opacityArea: 0.5,
-                                opacityCircles: 0,
+                                opacityCircles: 0.2,
                                 dotRadius: 3,
                                 strokeWidth: 2,
                                 wrapWidth: 10,
                                 labelFactor: 10,
+                                showLevels: true,
+
+      showAxes: true,
+      showLegend: true,
+      showVertices: true,
+      showPolygons: true
                             };
                             //Call function to draw the Radar chart
                             RadarChart(".radarChart", data, radarChartOptions);
+
+
+                            $(window).resize(function() {
+                              //  width = window.innerWidth * browserZoomLevel/10;
+                            //    alert(window.innerWidth);
+                            });
+
+
                           </script>
                     </div>
 
