@@ -959,16 +959,16 @@
                             //////////////////////// Set-Up //////////////////////////////
                             //////////////////////////////////////////////////////////////
              
-                            var margin = {top: 107, right: 0, bottom: 400, left: 154};
+                            var margin = {top: 90, right: 0, bottom: 400, left: 139};
                             var browserZoomLevel = Math.round(window.devicePixelRatio);
                             //alert(browserZoomLevel);
                                 //width = Math.min(500, window.innerWidth - 10) - margin.left - margin.right,
                                 //height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 15);
                                 width = window.innerWidth * browserZoomLevel/10;
-                                width =240;
+                                width =270;
                                 //alert(window.innerWidth)
                                 height = window.innerHeight * browserZoomLevel/10;
-                                height = 240;
+                                height = 270;
              
 
                                
@@ -1025,14 +1025,14 @@
                                 w: width,
                                 h: height,
                                 margin: margin,
-                                maxValue: 6,
+                                maxValue: 9,
                                 levels: 5,
                                 roundStrokes: false,
                                 color: color,
                                 opacityArea: 0.5,
-                                opacityCircles: 0.2,
-                                dotRadius: 3,
-                                strokeWidth: 2,
+                                opacityCircles: 0.3,
+                                dotRadius: 2,
+                                strokeWidth: 1,
                                 wrapWidth: 10,
                                 labelFactor: 10,
                                 showLevels: true,
@@ -1108,7 +1108,7 @@
                                     $idiotCorrect = $reportReguler['tkdidiot']['answers']['correct'];
                                     $idiotIncorrect = $reportReguler['tkdidiot']['answers']['incorrect'];
                                     $idiotEmpty = $reportReguler['tkdidiot']['answers']['empty'];
-                                    $totalIdiot = $idiotCorrect + $idiotEmpty + $idiotEmpty;
+                                    $totalIdiot = $idiotCorrect + $idiotEmpty + $idiotIncorrect;
                                 ?>
                                 <td class="subtest-text-left">LOGIKA VERBAL</td>
                                 <td>{{ $reportReguler['tkdidiot']['answers']['correct'] }}</td>
