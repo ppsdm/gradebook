@@ -1218,6 +1218,15 @@
             </section>
         </div>
         <div class="A4 potrait">
+        @php
+            $pagebreak = '</b></p></article>
+            </section>
+            <section class="sheet padding-15mm">
+            <article><br/>';
+
+            $htmltag = array('<p style="font-size: 15px;">','</p>');
+            $htmlesc   = array('');
+        @endphp
             <section class="sheet padding-15mm">
                 <div class='left' style="margin-top:-20px;">
                     <table>
@@ -1242,33 +1251,31 @@
                 <div class="container">
                     <h4>SCORE INTERPRETATION: </br>WORK DIRECTION</h4>
                     @php
+                        $uraianList = '';
                         foreach ($reportReguler["papi"]["uraian_2"] as $data) {
                             $uraian = explode("::", $data);
-                            $output = "<p style='font-size: 15px;'>[".trim($uraian[0])."] - " . $uraian[1]."</p>";
-                            echo $output;
+                            $output = "<p>[".trim($uraian[0])."] - " . $uraian[1]."</p>";
+                            $uraianList .= $output;
                         } 
+
+                        if(count($reportReguler['uraianNonBase']) > 0) {
+                            foreach ($reportReguler['uraianNonBase'] as $data) {
+                                $uraianNonBase = explode(" ::", $data);
+                                if (count($uraianNonBase) > 1){
+                                    $output = "<p>[".trim($uraianNonBase[0])."] - " . $uraianNonBase[1]."</p>";
+                                } else {
+                                    $output = "<p>[".trim($uraianNonBase[0])."]</p>";
+                                }
+                                
+                                $uraianList .= $output;
+                            } 
+                        }
+
+                        echo wordwrap(str_replace($htmltag, $htmlesc, $uraianList), 2570,  $pagebreak, false);
+
                     @endphp
                 </div>
             </section>
-            @if(count($reportReguler['uraianNonBase']) > 0)
-            <section class="sheet padding-15mm">
-                <div class="container">
-                    @php
-                        // dd($reportReguler['uraianNonBase'][0]);
-                        foreach ($reportReguler['uraianNonBase'] as $data) {
-                            $uraianNonBase = explode(" ::", $data);
-                            if (count($uraianNonBase) > 1){
-                                $output = "<p>[".trim($uraianNonBase[0])."] - " . $uraianNonBase[1]."</p>";
-                            } else {
-                                $output = "<p>[".trim($uraianNonBase[0])."]</p>";
-                            }
-                            
-                            echo $output;
-                        } 
-                    @endphp
-                </div>
-            </section>
-            @endif
         </div>  
     </body>
 </html>   
