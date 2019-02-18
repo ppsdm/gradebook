@@ -34,10 +34,15 @@ class ReportController extends Controller
         foreach($reportReguler['data']['papi']['uraian_6'] as $data) {
             $uraianNonBase[] = $data;
         }
+
         foreach($reportReguler['data']['papi']['uraian_8'] as $data) {
             $uraianNonBase[] = $data;
         }
-        
+
+        foreach($reportReguler['data']['papi']['uraian_10'] as $data) {
+            $uraianNonBase[] = $data;
+        }
+
         $output = [];
         $output['data'] = $reportReguler['data'];
         $output['data']['uraianNonBase'] = $uraianNonBase;
