@@ -228,9 +228,9 @@
         
                             </tr>
                             @for($i = 1;$i < 10;$i++)
-                                @if(isset($userProfile['extra_fields']['psikotes_date_' . $i]))
+                                @if(isset($userProfile['extra_fields']['psikotes_year_' . $i]))
                                     <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['psikotes_date_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['psikotes_year_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['psikotes_kepentingan_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['psikotes_pengirim_' . $i]['value'] }}</td>
                                     </tr>
