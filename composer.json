@@ -10,7 +10,9 @@
         "vlucas/phpdotenv": "~2.2",
         "barryvdh/laravel-snappy": "^0.4.3",
         "guzzlehttp/guzzle": "^6.3",
-        "nesbot/carbon": "1.24.1"
+        "nesbot/carbon": "1.24.1",
+        "mpdf/mpdf": "^7.1",
+        "spipu/html2pdf": "^5.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
