@@ -735,12 +735,12 @@
                             <td style="min-width:200px;">{{ strtoupper($userProfile['firstname'] . ' ' . $userProfile['lastname']) }}</td>
                             <td>PERUSAHAAN</td>
                             <td> : </td>
-                            <td></td>
+                        <td>{{  $reportReguler['form']['answers']['nama_perusahaan'] }}</td>
                         </tr>
                         <tr>
                             <td style="width:70px;">No. Tes </td>
                             <td> : </td>
-                            <td style="min-width:200px;"></td>
+                        <td style="min-width:200px;">{{  $reportReguler['form']['answers']['nomor_test'] }}</td>
                             <td></td>
                             <td></td>
                         </tr>
