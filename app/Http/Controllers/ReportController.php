@@ -47,8 +47,21 @@ class ReportController extends Controller
         $output = [];
         $output['data'] = $reportReguler['data'];
         $output['data']['uraianNonBase'] = $uraianNonBase;
+        
+        switch ($courseId) {
+            case 10:
+                $view = 'report-view';
+                break;
+            
+            case 15:
+                $view = 'report-view-15';
+                break;
 
-        return view('report-view',
+            default:
+                $view = 'report-view';
+                break;
+        }
+        return view($view,
             ['reportReguler' => $output['data']],
             ['userProfile' => $userProfile['data']]
         );
