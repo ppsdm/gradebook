@@ -26,4 +26,8 @@ $router->get('/', function () use ($router) {
 $router->get('report/{userId}/{courseId}', 'ReportController@index');
 $router->get('report-tpa', 'ReportTpaController@index');
 $router->get('lk/{id}/{courseId}', 'ReportLKController@show');
+<<<<<<< 9f65633e6ac6ad8cfccce24d223747145fcd4c90
 $router->get('reportPdf/{userId}/{courseId}', 'ReportController@pdf');
+=======
+$router->get('disc/{id}/{courseId}', 'DiscController@index');
+>>>>>>> disc chart
