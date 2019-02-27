@@ -1,0 +1,31 @@
+body {
+    font-family: Calibri, Candara, Segoe, Segoe UI, Arial, sans-serif;
+    text-align: justify;
+    background-color: #ecf0f1;
+  }
+
+  .disc-one {
+      grid-area: disc-chart-one;
+      margin-left: 30px;
+      width: 100%;
+  }
+  
+  .disc-two {
+      grid-area: disc-chart-two;
+      width: 100%;
+  }
+  
+  .disc-three {
+      grid-area: disc-chart-three;
+      width: 100%;
+  }
+  
+  
+  .grid-container {
+    margin-top:40px;
+    display: grid;
+    grid-template-areas:
+      'disc-chart-one disc-chart-two disc-chart-three'
+      'disc-chart-one disc-chart-two disc-chart-three';   
+    grid-gap: 10px;
+  }
