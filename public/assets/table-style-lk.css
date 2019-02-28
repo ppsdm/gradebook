@@ -162,9 +162,22 @@ table.bahasa td {
   padding: 2px;
 }
 
+.lk-profile-image-center {
+  display: block;
+  margin-top:100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+table.table-profile {
+  padding-top: 150px;
+}
+
+
 table.table-profile td {
   padding-top: 5px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .text-18 {
