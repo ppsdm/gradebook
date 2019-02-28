@@ -869,7 +869,7 @@
                         </table>
                     </div>
                     
-                    <div class="output-three">
+                    <!--div class="output-three">
                         <table class="index-value">
                             <tr>
                                 <td>{{ $reportReguler['papi']['scores']['scale20']['g'] }}</td>
@@ -947,8 +947,7 @@
                                 <td>{{ $totalScores }}</td>
                             </tr>
                         </table>
-                    </div>
-
+                    </div-->
                     <div class="output-four">
                         <div class="radarChart" style="background-image: url('<?php echo url('assets/img/KOSTICK.png') ?>'); background-position: center; background-repeat: no-repeat;background-size: 450px 450px; height: 450px; width: 550px; "></div>
                         <script>

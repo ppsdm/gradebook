@@ -13,8 +13,8 @@
                                 <div class="text-16 text-bold">RAHASIA</div>
                                 <hr>
                             </div>
-                            <div class="lk-profile-image">
-                                <img style="width: 120px;" src={{ "http://online.ppsdm.com/app/upload/users/" . $userProfile['id'] . "/" . $userProfile['id'] . "/" . $userProfile['picture_uri']}}>
+                            <div >
+                                <img style="width: 200px;" class="lk-profile-image-center" src={{ "http://online.ppsdm.com/app/upload/users/" . $userProfile['id'] . "/" . $userProfile['id'] . "/" . $userProfile['picture_uri']}}>
                             </div>
                             <table class="table-profile">
                                 <tr>
@@ -105,7 +105,19 @@
                             </table>
                         </div>
                 <div>
-                    <div>    
+                  
+
+                </div>
+
+                    
+                </div>
+            </section>
+        </div>
+
+        <div class="A4 potrait">
+            <section class="sheet padding-10mm">
+                <div>
+                <div>    
                         <div class="title-lk">
                             <h4>RIWAYAT PENDIDIKAN <small>(Diurut kebelakang dari pendidikan tertinggi, termasuk yang masih dijalani)</small></h4>
                         </div>
@@ -117,14 +129,84 @@
                                 <td style="width: 70px;">Tahun Masuk</td>
                                 <td style="width: 70px;">Tahun Lulus</td>
                             </tr>
-                            @for($i = 1;$i < 10;$i++)
-                                @if(isset($userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]))
+                            @for($i = 1;$i < 2;$i++)
+                                @if(isset($userProfile['extra_fields']['tk']))
                                     <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['jenjang_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['nama_perguruan_tinggi_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['fakultas_' . $i]['value'] }}</td>
-                                        <td></td>
-                                        <td>{{ $userProfile['extra_fields']['tahun_lulus_' . $i]['value'] }}</td>
+                                        <td>TK</td>
+                                        <td>{{ $userProfile['extra_fields']['tk']['value'] }}</td>
+                                        <td>-</td>
+                                        <td>{{ $userProfile['extra_fields']['tk_masuk']['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['tk_lulus']['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                            @for($i = 1;$i < 2;$i++)
+                                @if(isset($userProfile['extra_fields']['sd']))
+                                    <tr class="body-table-lk">
+                                        <td>SD</td>
+                                        <td>{{ $userProfile['extra_fields']['sd']['value'] }}</td>
+                                        <td>-</td>
+                                        <td>{{ $userProfile['extra_fields']['sd_masuk']['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['sd_lulus']['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                            @for($i = 1;$i < 2;$i++)
+                                @if(isset($userProfile['extra_fields']['smp']))
+                                    <tr class="body-table-lk">
+                                        <td>SMP</td>
+                                        <td>{{ $userProfile['extra_fields']['smp']['value'] }}</td>
+                                        <td>-</td>
+                                        <td>{{ $userProfile['extra_fields']['smp_masuk']['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['smp_lulus']['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                            @for($i = 1;$i < 2;$i++)
+                                @if(isset($userProfile['extra_fields']['sma']))
+                                    <tr class="body-table-lk">
+                                        <td>SMA/SMK</td>
+                                        <td>{{ $userProfile['extra_fields']['sma']['value'] }}</td>
+                                        @if(isset($userProfile['extra_fields']['sma_jurusan']))
+                                        <td>{{ $userProfile['extra_fields']['sma_jurusan']['value'] }}</td>
+                                        @else
+                                        <td>-</td>
+                                        @endif
+                                      
+                                        <td>{{ $userProfile['extra_fields']['sma_masuk']['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['sma_lulus']['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                            @for($i = 1;$i < 2;$i++)
+                                @if(isset($userProfile['extra_fields']['pendidikan_lain_lain']))
+                                    <tr class="body-table-lk">
+                                        <td>Pendidikan Lain Lain</td>
+                                        <td>{{ $userProfile['extra_fields']['pendidikan_lain_lain']['value'] }}</td>
+                                        <td>-</td>
+                                        <td>{{ $userProfile['extra_fields']['pendidikan_lain_lain_masuk']['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['pendidikan_lain_lain_lulus']['value'] }}</td>
+                                    </tr>
+                                @else
+                                    @break
+                                @endif
+                            @endfor
+                            @for($i = 1;$i < 10;$i++)
+                                @if(isset($userProfile['extra_fields']['perguruan_tinggi_' . $i]))
+                                    <tr class="body-table-lk">
+                                    <td>{{ $userProfile['extra_fields']['perguruan_tinggi_jenjang_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perguruan_tinggi_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perguruan_tinggi_fakultas_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perguruan_tinggi_masuk_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perguruan_tinggi_lulus_' . $i]['value'] }}</td>
                                     </tr>
                                 @else
                                     @break
@@ -142,15 +224,17 @@
                             <tr class="title-table-lk">
                                 <td>Nama Organisasi</td>
                                 <td>Jenis Organisasi</td>
-                                <td>Tahun</td>
+                                <td>Tahun Masuk</td>
+                                <td>Tahun Keluar</td>
                                 <td>Jabatan</td>
                             </tr>
                             @for($i = 1;$i < 10;$i++)
                                 @if(isset($userProfile['extra_fields']['organisasi_' . $i]))
                                     <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['organisasi_' . $i]['value'] }}</td>
-                                        <td> </td>
-                                        <td>{{ $userProfile['extra_fields']['organisasi_tahun_' . $i]['value'] }}</td>
+                                    <td>{{ $userProfile['extra_fields']['organisasi_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['organisasi_type_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['organisasi_masuk_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['organisasi_keluar_' . $i]['value'] }}</td>
                                         <td>{{ $userProfile['extra_fields']['organisasi_jabatan_' . $i]['value'] }}</td>
                                     </tr>
                                 @else
@@ -194,28 +278,24 @@
                         <table class="riwayat_pekerjaan">
                             <tr class="title-table-lk">
                                 <td>Nama Perusahaan\Instansi</td>
-                                <td>Tahun</td>
+                                <td>Tahun Masuk</td>
+                                <td>Tahun Keluar</td>
                                 <td>Jabatan Terakhir</td>
                             </tr>
                             @for($i = 1;$i < 10;$i++)
                                 @if(isset($userProfile['extra_fields']['perusahaan_' . $i]))
                                     <tr class="body-table-lk">
-                                        <td>{{ $userProfile['extra_fields']['perusahaan_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['mulai_kerja_' . $i]['value'] }}</td>
-                                        <td>{{ $userProfile['extra_fields']['jabatan_' . $i]['value'] }}</td>
-                                    </tr>
+                                    <td>{{ $userProfile['extra_fields']['perusahaan_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perusahaan_masuk_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perusahaan_keluar_' . $i]['value'] }}</td>
+                                        <td>{{ $userProfile['extra_fields']['perusahaan_jabatan_' . $i]['value'] }}</td>
                                 @else
                                     @break
                                 @endif
                             @endfor
                         </table>
                     </div>
-                </div>
-            </section>
-        </div>
-        <div class="A4 potrait">
-            <section class="sheet padding-10mm">
-                <div>
+
                     <div>    
                         <div class="title-lk">
                             <h4>PENGALAMAN PSIKOTES</h4>
@@ -240,7 +320,8 @@
                             @endfor
                         </table>
                     </div>
-                    <div>
+
+                <div>
                         <div class="title-lk">
                             <h4>KURSUS / PELATIHAN YANG PERNAH DIIKUTI</h4>
                         </div>
@@ -268,7 +349,16 @@
                             @endfor
                         </table>
                     </div>
-                    <div>    
+             
+                </div>
+            </section>
+        </div>
+        <div class="A4 potrait">
+            <section class="sheet padding-10mm">
+                <div>
+           
+                <div>
+                <div>    
                         <div class="title-lk">
                             <h4>REFERENSI</h4>
                         </div>
@@ -294,8 +384,6 @@
                         </table>
                      
                     </div>
-                </div>
-                <div>
                     <div style="padding-bottom: 20px;">
                         <div class="title-lk">
                             <h4>STATUS PERKAWINAN<small>(Pilih salah satu)</small></h4>
@@ -403,9 +491,9 @@
                         </table>
                         <small class="color-black-grey">*)Bila sudah meninggal dunia, sebutkan pendidikan dan pekerjaan semasa hidupnya, serta usia saat meninggal</small>
                     </div>  
-                    
                 </div>
             </section>
         </div>
+
     </body>
 </html>
