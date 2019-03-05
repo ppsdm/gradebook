@@ -40,67 +40,67 @@
                                 <tr>
                                     <td>Jenis Kelamin</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['gender']['value']) > 0 ? $userProfile['extra_fields']['gender']['value'] : '-'  }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['gender']['value']) > 0 ? $userProfile['extra_fields']['gender']['value'] : '-'  }}</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat</td>
                                     <td>:</td>
-                                    <td style="max-width: 400px;"> {{ strlen($userProfile['extra_fields']['alamat']['value']) > 0 ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
+                                    <td style="max-width: 400px;"> {{ isset($userProfile['extra_fields']['alamat']['value']) > 0 ? $userProfile['extra_fields']['alamat']['value'] : '-'  }}</td>
                                 </tr>
                                 <tr>
                                     <td>Telepon / HP</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['phone']) > 0 ? $userProfile['phone'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['phone']) > 0 ? $userProfile['phone'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>eMail</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['email'] ) > 0 ? $userProfile['email'] : '-'}}</td>
+                                    <td> {{ isset($userProfile['email'] ) > 0 ? $userProfile['email'] : '-'}}</td>
                                 </tr>
                                 <tr>
                                     <td>Facebook</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['facebook']['value']) > 0 ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['facebook']['value']) > 0 ? $userProfile['extra_fields']['facebook']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Instagram</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['instagram']['value']) > 0 ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['instagram']['value']) > 0 ? $userProfile['extra_fields']['instagram']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Twitter</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['twitter']['value']) > 0 ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['twitter']['value']) > 0 ? $userProfile['extra_fields']['twitter']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>LinkedIn</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['linkedin_url']['value']) > 0 ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['linkedin_url']['value']) > 0 ? $userProfile['extra_fields']['linkedin_url']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Pendidikan Terakhir</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['jenjang_1']['value']) > 0 ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['jenjang_1']['value']) > 0 ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Agama / Kepercayaan</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['religion']['value'] ) > 0 ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['religion']['value'] ) > 0 ? $userProfile['extra_fields']['religion']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Suku Bangsa / Asal Bangsa</td>
                                     <td>:</td>
-                                    <td> {{ strlen($userProfile['extra_fields']['suku_bangsa']['value']) > 0 ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
+                                    <td> {{ isset($userProfile['extra_fields']['suku_bangsa']['value']) > 0 ? $userProfile['extra_fields']['suku_bangsa']['value'] : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Jabatan Saat Ini</td>
                                     <td>:</td>
-                                    <td> {{ strlen($testData['form']['answers']['jabatan_saatini'] ) > 0 ? $testData['form']['answers']['jabatan_saatini']  : '-' }}</td>
+                                    <td> {{ isset($testData['form']['answers']['jabatan_saatini'] ) > 0 ? $testData['form']['answers']['jabatan_saatini']  : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Prospek Jabatan</td>
                                     <td>:</td>
-                                    <td> {{ strlen($testData['form']['answers']['prospek_jabatan'] ) >0 ? $testData['form']['answers']['prospek_jabatan'] : '-' }}</td>
+                                    <td> {{ isset($testData['form']['answers']['prospek_jabatan'] ) >0 ? $testData['form']['answers']['prospek_jabatan'] : '-' }}</td>
                                 </tr>
                             </table>
                         </div>
