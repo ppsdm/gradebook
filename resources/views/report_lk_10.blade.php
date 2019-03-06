@@ -80,7 +80,7 @@
                                 <tr>
                                     <td>Pendidikan Terakhir</td>
                                     <td>:</td>
-                                    <td> {{ isset($userProfile['extra_fields']['jenjang_1']['value']) > 0 ? $userProfile['extra_fields']['jenjang_1']['value'] : '-' }}</td>
+                                    <td> {{ isset($testData['form']['answers']['pendidikan'] ) > 0 ? $testData['form']['answers']['pendidikan']  : '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td>Agama / Kepercayaan</td>

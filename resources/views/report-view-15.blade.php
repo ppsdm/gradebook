@@ -35,7 +35,7 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">PENDIDIKAN</td>
-                                <td colspan="7" class="column-biodata-value">{{$userProfile['extra_fields']['jenjang_1']['value']}} </td>
+                                <td colspan="7" class="column-biodata-value">{{$reportReguler['form']['answers']['pendidikan']}} </td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TANGGAL TEST</td>
@@ -43,11 +43,15 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TUJUAN TEST</td>
-                                <td colspan="7" class="column-biodata-value">Seleksi</td>
+                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['tujuan_test'] }}</td>
                             </tr>
                             <tr>
-                                <td class="column-biodata-title">TINGKAT JABATAN</td>
-                                <td colspan="7" class="column-biodata-value">Staff</td>
+                                <td class="column-biodata-title">NAMA PERUSAHAAN</td>
+                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['nama_perusahaan'] }}</td>
+                            </tr>
+                            <tr>
+                                <td class="column-biodata-title">PROSPEK JABATAN</td>
+                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['prospek_jabatan'] }}</td>
                             </tr>
                             <tr class="section-table">
                                 <td class="column-biodata-title">KODE BUKU</td>
