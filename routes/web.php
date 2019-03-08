@@ -24,6 +24,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('report/{userId}/{courseId}', 'ReportController@index');
+$router->get('checkuser/{userId}/{courseId}', 'ReportController@checkuser');
 $router->get('report-tpa', 'ReportTpaController@index');
 $router->get('lk/{id}/{courseId}', 'ReportLKController@show');
 <<<<<<< 9f65633e6ac6ad8cfccce24d223747145fcd4c90
