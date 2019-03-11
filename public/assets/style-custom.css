@@ -29,11 +29,11 @@ body {
 /** Padding area **/
 .sheet.padding-5mm { padding: 5mm }
 .sheet.padding-10mm { padding: 10mm }
-.sheet.padding-15mm { padding: 15mm }
+.sheet.padding-15mm { padding: 10mm 15mm 15mm 15mm }
 .sheet.padding-20mm { padding: 20mm }
 .sheet.padding-25mm {
   padding-left: 25mm;
-  padding-top: 30mm;
+  padding-top: 20mm;
   /* padding-bottom: 30mm; */
   padding-right: 25mm;
 }
