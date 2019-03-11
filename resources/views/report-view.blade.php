@@ -39,19 +39,19 @@
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TUJUAN TEST</td>
-                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['tujuan_test'] }}</td>
+                                <td colspan="7" class="column-biodata-value">{{ $reportReguler['form']['answers']['tujuan_test'] }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">NAMA PERUSAHAAN</td>
-                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['nama_perusahaan'] }}</td>
+                                <td colspan="7" class="column-biodata-value">{{ $reportReguler['form']['answers']['nama_perusahaan'] }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">TINGKAT JABATAN</td>
-                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['jabatan_saatini'] }}</td>
+                                <td colspan="7" class="column-biodata-value">{{ $reportReguler['form']['answers']['jabatan_saatini'] }}</td>
                             </tr>
                             <tr>
                                 <td class="column-biodata-title">PROSPEK JABATAN</td>
-                                <td colspan="7"class="column-biodata-value">{{ $reportReguler['form']['answers']['prospek_jabatan'] }}</td>
+                                <td colspan="7" class="column-biodata-value">{{ $reportReguler['form']['answers']['prospek_jabatan'] }}</td>
                             </tr>
                             <tr class="section-table">
                                 <td class="column-biodata-title">KODE BUKU</td>
@@ -59,13 +59,13 @@
                             </tr>
                             <tr class="column-point column-biodata-value section-table">
                                 <td class="column-biodata-value border-left-none"></td>
-                                <td style="width:10px; ">1</td>
-                                <td style="width:10px; ">2</td>
-                                <td style="width:10px; ">3</td>
-                                <td style="width:10px; ">4</td>
-                                <td style="width:10px; ">5</td>
-                                <td style="width:10px; ">6</td>
-                                <td style="width:10px; ">7</td>
+                                <td style="width:15px; ">1</td>
+                                <td style="width:15px; ">2</td>
+                                <td style="width:15px; ">3</td>
+                                <td style="width:15px; ">4</td>
+                                <td style="width:15px; ">5</td>
+                                <td style="width:15px; ">6</td>
+                                <td style="width:15px; ">7</td>
                             </tr>
                             <tr class="column-point">
                                 <td class="column-title-point">Intelegensi Umum</td>
