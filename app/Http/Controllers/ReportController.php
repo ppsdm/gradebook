@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
-use Spipu\Html2Pdf\Html2Pdf;
-use Mpdf\Mpdf;
+use PDF;
 
 class ReportController extends Controller
 {
@@ -55,9 +54,9 @@ class ReportController extends Controller
     }
     public function index($userId, $courseId)
     {
-        // $loginUserId =  $this->checkuser($userId, $courseId);
+        $loginUserId =  $this->checkuser($userId, $courseId);
 
-        // if (($loginUserId == $userId ) || ($loginUserId == 1)){
+        if (($loginUserId == $userId ) || ($loginUserId == 1)){
         // dd($courseId);
         $client = new Client;
         $response = $client->get('http://rest.ppsdm.com:5000/getResult/'. $userId .  '/' . $courseId);
@@ -104,9 +103,9 @@ class ReportController extends Controller
             ['reportReguler' => $output['data']],
             ['userProfile' => $userProfile['data']]
         );
-    // } else {
-    //     echo "you're not allowed";
-    // }
+    } else {
+        echo "you're not allowed";
+    }
     }
 
     public function pdf($userId, $courseId) {
@@ -137,35 +136,23 @@ class ReportController extends Controller
         foreach($reportReguler['data']['papi']['uraian_10'] as $data) {
             $uraian[] = $data;
         }
+        
+        switch ($courseId) {
+            case 10:
+                $view = 'view-pdf/report-10-potrait';
+                break;
+            
+            case 15:
+                $view = 'view-pdf/report-15-potrait';
+                break;
 
-        // return view('view-pdf/report-4',
-        // compact('reportReguler', 'uraian', 'userProfile')
-        // );
+            default:
+                $view = 'view-pdf/report-4-potrait';
+                break;
+        }
 
-        $mpdf = new Mpdf([
-            'mode' => 'utf-8', 
-            // 'format' => [190, 236], 
-            // 'orientation' => 'P'
-        ]);
-        // $mpdf->AddPage('L','P','P','','',25,25,55,45,18,12);
-        // $mpdf->SetProtection(array('print'));
-        // $mpdf->SetTitle("Acme Trading Co. - Invoice");
-        // $mpdf->SetAuthor("Acme Trading Co.");
-        // $mpdf->SetWatermarkText("Paid");
-        // $mpdf->showWatermarkText = true;
-        // $mpdf->watermark_font = 'DejaVuSansCondensed';
-        // $mpdf->watermarkTextAlpha = 0.1;
-        // $mpdf->SetDisplayMode('fullpage');
-
-        $mpdf->AddPage('L','','','','',10,10,10,10,0,0);
-        $mpdf->WriteHTML(view('view-pdf/report-4-landscape', compact('reportReguler', 'userProfile')));
-        $mpdf->AddPage('P');
-        $mpdf->WriteHTML(view('view-pdf/report-4-potrait', compact('uraian')));
-        $mpdf->Output();
-
-        // $htmlpdf = new Html2Pdf('P', 'A4', 'en');
-        // $htmlpdf->pdf->SetTitle('title pdf');
-        // $htmlpdf->writeHTML(view('view-pdf/report-4', compact('reportReguler', 'uraian', 'userProfile')));
-        // $htmlpdf->output('my_doc.pdf');
+        $profile = $userProfile['data'];
+        $pdf = PDF::loadHTML(view($view, compact('uraian','profile')))->setPaper('a4')->setOption('margin-bottom',10);
+        return $pdf->stream();
     }
 }
