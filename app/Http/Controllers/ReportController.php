@@ -37,7 +37,6 @@ class ReportController extends Controller
         
         $retval = $_SESSION['_user']['user_id'];
         return ($retval);
-   
     }
 
     public function index($userId, $courseId)
