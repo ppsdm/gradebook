@@ -61,9 +61,11 @@ $app->singleton(
 
 // $app->middleware([
 //    App\Http\Middleware\ExampleMiddleware::class
+    // App\Http\Middleware\CookieMiddleware::class
 // ]);
-
+// 
 // $app->routeMiddleware([
+//     'cookie' => App\Http\Middleware\CookieMiddleware::class,
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
@@ -81,6 +83,10 @@ $app->singleton(
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+class_alias('Barryvdh\Snappy\Facades\SnappyPdf', 'PDF');
+$app->register(Barryvdh\Snappy\LumenServiceProvider::class);
+$app->withFacades();
 
 /*
 |--------------------------------------------------------------------------

@@ -18,7 +18,6 @@ $router->get('foo', function () use ($router) {
     return 'Hello World';
 });
 
-
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
@@ -28,3 +27,5 @@ $router->get('checkuser/{userId}/{courseId}', 'ReportController@checkuser');
 $router->get('report-tpa', 'ReportTpaController@index');
 $router->get('lk/{id}/{courseId}', 'ReportLKController@show');
 $router->get('disc/{id}/{courseId}', 'DiscController@index');
+$router->get('report-pdf/{userId}/{courseId}', 'ReportController@pdf');
+$router->get('lk-pdf/{id}/{courseId}', 'ReportLKController@pdf');

@@ -16,40 +16,40 @@ tfoot {
   display: table-footer-group;
 }
 .output-one {
-    grid-area: biodata-1;
+  grid-area: biodata-1;
 }
 
 .output-two {
-    grid-area: biodata-2;
-    margin-left: 30px;
+  grid-area: biodata-2;
+  margin-left: 30px;
 }
 
 .output-three {
-    grid-area: biodata-3;
+  grid-area: biodata-3;
 }
 
 .output-four {
-    margin-left: 20px;
-    grid-area: biodata-4;
+  margin-left: 20px;
+  grid-area: biodata-4;
 }
 
 .output-five {
-    margin-left: 30px;
-    margin-top: 30px;
-    grid-area: biodata-5;
+  margin-left: 30px;
+  margin-top: 30px;
+  grid-area: biodata-5;
 }
 
 .output-six {
-    grid-area: biodata-6;
-    margin-left: 20px;
-    margin-top: 30px;
+  grid-area: biodata-6;
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 .grid-container {
-    display: grid;
+  display: grid;
   grid-template-areas:
-    'biodata-1 biodata-2 biodata-3 biodata-4 biodata-4'
-    'biodata-1 biodata-5 biodata-5 biodata-5 biodata-5';    
+    "biodata-1 biodata-2 biodata-3 biodata-4 biodata-4"
+    "biodata-1 biodata-5 biodata-5 biodata-5 biodata-5";
   grid-gap: 10px;
 }
 
@@ -154,9 +154,19 @@ table.index-value tbody td {
 }
 
 .subtest-text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .subtest-text-left {
-    text-align: left;
+  text-align: left;
+}
+
+.uraian {
+  /* padding: 20px; */
+}
+
+.uraian p {
+  font-size: 14px;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
 }
